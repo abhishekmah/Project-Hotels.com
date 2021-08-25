@@ -1,6 +1,6 @@
 import { Home } from './Pages/Home/Home';
 import './App.css';
-import LastMinDeals from "./Pages/LastMinDeals"
+// import LastMinDeals from "./Pages/LastMinDeals"
 
 function App() {
   return (

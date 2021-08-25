@@ -1,0 +1,17 @@
+.CovidAdMain{
+    display: flex;
+    justify-content: center;
+}
+
+.CovidAd{
+    font-size: 14px;
+    margin: 0.6rem 0;
+    flex: 0.75;
+}
+.CovidAd p{
+    margin: 0.3rem 0;
+}
+.CovidAd p:last-child{
+    margin-left: 1rem;
+    color: royalblue;
+}

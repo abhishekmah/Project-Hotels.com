@@ -4,6 +4,7 @@ import { CardSM } from "../../Components/CardSM/CardSM";
 import { CovidAd } from "../../Components/CovidAd/CovidAd";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
 import { Navbar } from "../../Components/Navbar/Navbar";
+import {TravelWithConfidence} from '../../Components/TravelWithConfidence/TravelWithConfidence'
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -134,7 +135,10 @@ const Home = () => {
             <p>Kakslauttanen Arctic Resort</p>
             <span>Finland</span>
           </CardLG>
-        </div>
+              </div>
+              <HRLine />
+              <TravelWithConfidence/>
+              <HRLine />
       </div>
     </div>
   );

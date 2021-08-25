@@ -2,10 +2,15 @@
     position: relative;
     display: flex;
     justify-content: center;
+  
 }
 .home__backgroundImage > img{
-    height: 500px;
-    position: fixed;
+  height: 486px;
+  width: 100%;
+background-position: center;
+background-size: cover;
+   
+   
 }
 .searchCard{
     position: absolute;
@@ -22,4 +27,15 @@
     color: #d32f2f;
     font-size: 28px;
     font-weight: 700;
+}
+
+.home__body{
+   width: 78%;
+   margin: auto;
+   
+}
+.home__Card{
+    
+    display: flex;
+    flex-wrap: wrap;
 }

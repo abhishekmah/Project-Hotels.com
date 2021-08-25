@@ -1,0 +1,41 @@
+.imgDiv{
+    margin-top: 30px;
+    background-image: url("https://a.cdn-hotels.com/cos/production140/d505/73fc0a30-4229-11e8-94a9-0242ac11000e.jpg");
+}
+.imgDiv>h1{
+   text-align: left;
+   margin-left: 200px;
+   color: white;
+}
+.imgDiv>p{
+   text-align: left;
+   margin-left: 200px;
+   color: white;
+   font-size: 20px;
+}
+.date{
+margin-left: 200px;
+width: 30%;
+height: 350px;
+padding: 18px;
+background-color: rgb(240, 235, 235);
+/* border: 1px solid grey; */
+border-radius: 5px;
+box-shadow: 5px 5px 25px grey;
+}
+.date>h1{
+    font-size: 28px;
+    text-align: left;
+    color: rgb(100, 98, 98);
+    margin-bottom: 10px;
+}
+.date>p{
+    font-size: 12px;
+    text-align: left;
+    color: rgb(36, 35, 35);
+    margin-bottom: 10px;
+}
+.date>input{
+    width: 100%;
+    margin-bottom: 5px;
+}

@@ -5,6 +5,8 @@ import { CovidAd } from "../../Components/CovidAd/CovidAd";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import {TravelWithConfidence} from '../../Components/TravelWithConfidence/TravelWithConfidence'
+import {CustomizedAccordions} from '../../Components/Footer/Accordion'
+
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -138,7 +140,8 @@ const Home = () => {
               </div>
               <HRLine />
               <TravelWithConfidence/>
-              <HRLine />
+              {/* <HRLine /> */}
+              <CustomizedAccordions/>
       </div>
     </div>
   );

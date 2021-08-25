@@ -1,0 +1,25 @@
+.home__backgroundImage{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.home__backgroundImage > img{
+    height: 500px;
+    position: fixed;
+}
+.searchCard{
+    position: absolute;
+    top: 1rem;
+    background-color: white;
+    height: 90px;
+    flex: 0.75;
+    width: 73%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 6px #bbb;
+}
+.searchCard p{
+    color: #d32f2f;
+    font-size: 28px;
+    font-weight: 700;
+}

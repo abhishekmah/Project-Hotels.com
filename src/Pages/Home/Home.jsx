@@ -1,15 +1,29 @@
 import React from "react";
+import './CarouselAerro.css'
 import { CardLG } from "../../Components/CardLG/CardLG";
 import { CardSM } from "../../Components/CardSM/CardSM";
 import { CovidAd } from "../../Components/CovidAd/CovidAd";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import {TravelWithConfidence} from '../../Components/TravelWithConfidence/TravelWithConfidence'
-import {CustomizedAccordions} from '../../Components/Footer/Accordion'
 
 import styles from "./Home.module.css";
+import { Footer } from "../../Components/Footer/Footer";
+import { CardWide } from "../../Components/CardWide/CardWide";
+import Carousel from 'react-elastic-carousel'
+import Slider from "react-slick";
+
+
 
 const Home = () => {
+const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+    
   return (
     <div className={styles.home}>
       <CovidAd />
@@ -139,9 +153,143 @@ const Home = () => {
           </CardLG>
               </div>
               <HRLine />
-              <TravelWithConfidence/>
-              {/* <HRLine /> */}
-              <CustomizedAccordions/>
+              <TravelWithConfidence />
+              <HRLine />
+
+              
+
+
+                <h2 className={styles.home__cardSMHeading}>Start planning your next getaway</h2>
+              <div className={styles.Home__CardWide}>
+                  <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
+                  <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
+              alt="Last Minute Deals"
+            />
+            <p>Last Minute Deals</p>
+            <span>It's never too late to get great prices</span>
+                  </CardWide>
+                  <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/51c49195-3b5e-4849-946c-4317bd1e9ce6.jpg"
+              alt="Find the best deals"
+            />
+            <p>Find the best deals</p>
+            <span>Get inspiration for your next trip!</span>
+                    </CardWide>
+                    <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/9cfc4a71-2f89-4659-8e6b-6cdd40f0decd.jpg"
+              alt="Get the app"
+            />
+            <p>Get the app</p>
+            <span>Book on the go with our mobile app</span>
+                      </CardWide>
+                      <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
+              alt="Last Minute Deals"
+            />
+            <p>Last Minute Deals</p>
+            <span>It's never too late to get great prices</span>
+                  </CardWide>
+                  <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/51c49195-3b5e-4849-946c-4317bd1e9ce6.jpg"
+              alt="Find the best deals"
+            />
+            <p>Find the best deals</p>
+            <span>Get inspiration for your next trip!</span>
+                    </CardWide>
+                    <CardWide>
+                      <img
+              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/9cfc4a71-2f89-4659-8e6b-6cdd40f0decd.jpg"
+              alt="Get the app"
+            />
+            <p>Get the app</p>
+            <span>Book on the go with our mobile app</span>
+                    </CardWide>
+                  
+</Carousel>
+                  
+                  
+                  
+              </div>
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <HRLine />
+        <h2 className={styles.home__cardSMHeading}>We do more than just hotels...</h2>
+        <div className={styles.home__Card}>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/resorts.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Resort"
+            />
+            <p>Resort</p>
+          </CardSM>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/apartments.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Apartments"
+            />
+            <p>Apartments</p>
+          </CardSM>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/hotels.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Hotels"
+            />
+            <p>Hotels</p>
+          </CardSM>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/guest_houses.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Guest houses"
+            />
+            <p>Guest houses</p>
+          </CardSM>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/hostels.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Hostels"
+            />
+            <p>Hostels</p>
+          </CardSM>
+          <CardSM>
+            <img
+              src="https://a.cdn-hotels.com/images/common/pages/lpa/homepage/propertytypes/ryokan.jpg?impolicy=fcrop&w=188&h=106&q=high"
+              alt="Ryokans"
+            />
+            <p>Ryokans</p>
+          </CardSM>
+        </div>
+              <HRLine />
+              <Footer/>
       </div>
     </div>
   );

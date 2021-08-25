@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
   
 }
 .home__backgroundImage > img{
@@ -34,8 +35,17 @@ background-size: cover;
    margin: auto;
    
 }
-.home__Card{
+.home__Card, .home__cardLg{
     
     display: flex;
     flex-wrap: wrap;
+}
+.home__cardSMHeading,.home__cardLGHeading{
+    margin: 0.6rem 0;
+    margin-left: 0.5rem;
+}
+.home__cardLGSubline{
+   margin-left: 0.5rem; 
+   font-size: 15px;
+    font-weight: 400;
 }

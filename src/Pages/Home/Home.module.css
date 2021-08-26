@@ -2,10 +2,16 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
+  
 }
 .home__backgroundImage > img{
-    height: 500px;
-    position: fixed;
+  height: 486px;
+  width: 100%;
+background-position: center;
+background-size: cover;
+   
+   
 }
 .searchCard{
     position: absolute;
@@ -23,3 +29,26 @@
     font-size: 28px;
     font-weight: 700;
 }
+
+.home__body{
+   width: 78%;
+   margin: auto;
+   
+}
+.home__Card, .home__cardLg,.Home__CardWide{
+    
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: red; */
+}
+.home__cardSMHeading,.home__cardLGHeading{
+    margin: 0.6rem 0;
+    margin-left: 0.5rem;
+}
+.home__cardLGSubline{
+   margin-left: 0.5rem; 
+   font-size: 15px;
+    font-weight: 400;
+}
+
+

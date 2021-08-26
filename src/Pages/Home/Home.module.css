@@ -42,6 +42,9 @@ background-size: cover;
     justify-content: center;
     /* background-color: red; */
 }
+.home__seemoreBtn{
+margin-bottom: 1rem;
+}
 .home__cardSMHeading,.home__cardLGHeading{
     margin: 0.6rem 0;
     margin-left: 0.5rem;

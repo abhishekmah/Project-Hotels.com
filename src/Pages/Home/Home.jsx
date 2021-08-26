@@ -12,6 +12,7 @@ import { CardWide } from "../../Components/CardWide/CardWide";
 import Carousel from 'react-elastic-carousel'
 import Slider from "react-slick";
 import { Button } from "../../Components/Button/Button";
+import { Rewards } from "../../Components/Rewards/Rewards";
 
 
 
@@ -30,7 +31,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.home__body}>
-        <HRLine />
+        {/* <HRLine /> */}
         <h2 className={styles.home__cardSMHeading}>Find a place nearby</h2>
         <div className={styles.home__Card}>
           <CardSM>
@@ -154,11 +155,11 @@ const Home = () => {
         
               <HRLine />
               <TravelWithConfidence />
+        <HRLine />
+        
+          <Rewards/>
+
               <HRLine />
-
-              
-
-
                 <h2 className={styles.home__cardSMHeading}>Start planning your next getaway</h2>
               <div className={styles.Home__CardWide}>
                   <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>

@@ -10,10 +10,10 @@ const Navbar = () => {
             <div className={styles.nav__navbar}>
             <img src="./images/hotels-logo1.png" alt="Hotels Logo"  />
                 <div className={styles.nav__menus}>
-                    <p> <img src="./images/india.png" alt="india icon"  width="15px"/> <IoMdArrowDropdown/></p>
-                    <p>INR</p>
-                    <p>Help</p>
-                    <p><FaRegCalendarAlt/> Your Bookings</p>
+                    <p> <img src="./images/india.png" alt="india icon" width="15px" /> <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p><FaRegCalendarAlt/> &nbsp; Your Bookings</p>
                     <p>Sign in</p>
             </div>
             </div>

@@ -1,0 +1,143 @@
+.imgDiv{
+    background-image: url("https://a.cdn-hotels.com/cos/production140/d505/73fc0a30-4229-11e8-94a9-0242ac11000e.jpg");
+}
+.imgDiv>h1{
+   text-align: left;
+   margin-left: 200px;
+   color: white;
+}
+.imgDiv>p{
+   text-align: left;
+   margin-left: 200px;
+   color: white;
+   font-size: 20px;
+}
+.date{
+margin-left: 200px;
+width: 30%;
+height: 320px;
+padding: 18px;
+background-color: rgb(240, 235, 235);
+/* border: 1px solid grey; */
+border-radius: 5px;
+box-shadow: 5px 5px 25px grey;
+}
+.date>h1{
+    font-size: 28px;
+    text-align: left;
+    color: rgb(48, 47, 47);
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+.date>p{
+    font-size: 12px;
+    text-align: left;
+    color: rgb(36, 35, 35);
+    margin-bottom: 10px;
+}
+.date>input{
+    width: 100%;
+    margin-bottom: 5px;
+}
+#icon{
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+#icon3{
+    font-weight: bold;
+    margin-bottom: -3px;
+    color: rgb(29, 29, 253);
+}
+#icon1{
+    font-weight: bold;
+    margin-bottom: -8px;
+    width: 30px;
+    height: 25px;
+}
+.dataDiv{
+    margin: auto;
+    position: relative;
+    width: 80%;
+    background-color: #ecece8;
+}
+.dataDiv>.trust{
+    margin: auto;
+    display: flex;
+    width: 98%;
+    height: 38px;
+    border-radius: 5px;
+    background-color: white;
+}
+.p1{
+  margin-left: 20%;
+}
+.dataDiv>.trust>p{
+  margin-right: 15px;
+  color: #458f00;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.dataDiv>.countryCont{
+
+    display: flex;
+    width: 96%;
+    height: 35px;
+    border-radius: 0px;
+    padding: 2%;
+    font-size: 12px;
+    color: rgb(72, 72, 253);
+    background-color: #dcdcdc;
+}
+#h1{
+    color: rgb(29, 29, 253);
+}
+.dataMain{
+
+    font-size: 30px;
+    padding: 2%;
+}
+.dataMain>.data{
+
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    width: 99%;
+    height: 440px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.dataMain>.data>img{
+
+    width: 70%;
+}
+.dataDiv>.priceCard{
+
+    position: absolute;
+    z-index: 2;
+    top: 23%;
+    left: 5%;
+    width: 10%;
+    height: 230px;
+    padding: 1%;
+    border-radius: 7px;
+    background-color: #d32f2f;
+}
+.dataDiv>.priceCard>h1{
+
+    color: white;
+    font-size: 18px;
+}
+.dataDiv>.priceCard>button{
+
+    background-color: rgb(60, 60, 250);
+    cursor: pointer;
+    margin-top: 45px;
+    border-radius: 3px;
+    width: 120px;
+    height: 45px;
+    color: white;
+    font-size: 15px;
+}
+

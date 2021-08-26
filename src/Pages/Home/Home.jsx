@@ -162,7 +162,7 @@ const Home = () => {
               <HRLine />
                 <h2 className={styles.home__cardSMHeading}>Start planning your next getaway</h2>
               <div className={styles.Home__CardWide}>
-                  <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
+      <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
                   <CardWide>
                       <img
               src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"

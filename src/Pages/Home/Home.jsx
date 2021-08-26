@@ -13,6 +13,7 @@ import Carousel from 'react-elastic-carousel'
 import Slider from "react-slick";
 import { Button } from "../../Components/Button/Button";
 import { Rewards } from "../../Components/Rewards/Rewards";
+import { Why } from "../../Components/Why/Why";
 
 
 
@@ -77,6 +78,8 @@ const Home = () => {
             <p>Gopalpur</p>
           </CardSM>
         </div>
+        <HRLine />
+        <Why/>
         <HRLine />
 
                    <h2 className={styles.home__cardLGHeading}>A snapshot of the world’s most picture-perfect properties</h2>

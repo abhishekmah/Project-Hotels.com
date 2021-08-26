@@ -35,10 +35,11 @@ background-size: cover;
    margin: auto;
    
 }
-.home__Card, .home__cardLg,.Home__CardWide{
+.home__Card, .home__cardLg,.Home__CardWide, .home__seemoreBtn{
     
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     /* background-color: red; */
 }
 .home__cardSMHeading,.home__cardLGHeading{

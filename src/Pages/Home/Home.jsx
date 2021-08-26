@@ -1,5 +1,4 @@
 import React from "react";
-import './CarouselAerro.css'
 import { CardLG } from "../../Components/CardLG/CardLG";
 import { CardSM } from "../../Components/CardSM/CardSM";
 import { CovidAd } from "../../Components/CovidAd/CovidAd";
@@ -12,17 +11,12 @@ import { Footer } from "../../Components/Footer/Footer";
 import { CardWide } from "../../Components/CardWide/CardWide";
 import Carousel from 'react-elastic-carousel'
 import Slider from "react-slick";
+import { Button } from "../../Components/Button/Button";
 
 
 
 const Home = () => {
-const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+
     
   return (
     <div className={styles.home}>
@@ -151,7 +145,13 @@ const settings = {
             <p>Kakslauttanen Arctic Resort</p>
             <span>Finland</span>
           </CardLG>
-              </div>
+        </div>
+        
+        <div className={styles.home__seemoreBtn}>
+          
+          <Button bg="white" color="royalblue" border="1px solid #aaa" >SEE MORE</Button>
+        </div>
+        
               <HRLine />
               <TravelWithConfidence />
               <HRLine />

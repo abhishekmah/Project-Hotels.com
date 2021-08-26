@@ -6,8 +6,8 @@ import LastMinDeals from "./Pages/LastDeals/LastMinDeals"
 function App() {
   return (
     <div className="App">
-      {/* <Home/> */}
-      <LastMinDeals />
+      <Home/>
+      {/* <LastMinDeals /> */}
       
     </div>
   );

@@ -4,13 +4,17 @@ import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
 const Navbar = () => {
+
+    const handleCountry = () => {
+        console.log("clicked")
+    }
     return (
         <div className={styles.nav__main}>
         <div className={styles.nav}>
             <div className={styles.nav__navbar}>
             <img src="./images/hotels-logo1.png" alt="Hotels Logo"  />
                 <div className={styles.nav__menus}>
-                    <p> <img src="./images/india.png" alt="india icon" width="15px" /> <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p onClick={handleCountry}> <img src="./images/india.png" alt="india icon" width="15px" /> <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p><FaRegCalendarAlt/> &nbsp; Your Bookings</p>

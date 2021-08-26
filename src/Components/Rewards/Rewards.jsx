@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Button} from '../../Components/Button/Button'
+import { Button } from '../../Components/Button/Button'
+import { BiCheck } from 'react-icons/bi';
 const Reward = styled.div`
 display: flex;
     justify-content: center;
@@ -49,9 +50,9 @@ const Rewards = () => {
             </div>
             <div className="right">
                 <img src="https://a.cdn-hotels.com/kesstatic/16cb9904184e8e153945.png" alt="" />
-                <p><span>Unlock Secret Prices!</span> You could get 10% off</p>
-                <p><span>Get 1 reward night*</span> for every 10 nights you stay Find out more</p>
-                <p><span>Rack up rewards</span> in over 1,000,000 properties worldwide</p>
+                <p><BiCheck/><span>Unlock Secret Prices!</span> You could get 10% off</p>
+                <p><BiCheck/><span>Get 1 reward night*</span> for every 10 nights you stay Find out more</p>
+                <p><BiCheck/><span>Rack up rewards</span> in over 1,000,000 properties worldwide</p>
                 <div className="buttons">
                     <Button bg="royalblue" color="white">JOIN NOW</Button>
                     <Button bg="white" color="royalblue">SIGN IN</Button>

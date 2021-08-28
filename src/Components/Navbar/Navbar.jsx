@@ -1,18 +1,31 @@
 import React from 'react'
 import styles from './Navbar.module.css'
+import { FaRegCalendarAlt } from 'react-icons/fa';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components'
+
+const Links = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
 
 const Navbar = () => {
+
+    const handleCountry = () => {
+        console.log("clicked")
+    }
     return (
         <div className={styles.nav__main}>
         <div className={styles.nav}>
             <div className={styles.nav__navbar}>
-            <img src="./images/hotels-logo1.png" alt="Hotels Logo"  />
+            <Links to="/"><img src="./images/hotels-logo1.png" alt="Hotels Logo"   height="33px"/></Links>
                 <div className={styles.nav__menus}>
-                    <p>Country</p>
-                    <p>INR</p>
-                    <p>Help</p>
-                    <p>Your Bookings</p>
-                    <p>Signin</p>
+                    <p onClick={handleCountry}> <img src="./images/india.png" alt="india icon" width="15px" /> <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
+                    <p><FaRegCalendarAlt/> &nbsp; Your Bookings</p>
+                    <p><Links to="/signin"> Sign in </Links></p>
             </div>
             </div>
             <div className={styles.nav__extrasLink}>

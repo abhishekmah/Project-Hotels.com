@@ -67,7 +67,7 @@ const Signin = () => {
                     <p>Don't have an acount? <span className="signup">Signup</span></p> <br />
                     <p>Find your booking using your confirmation number</p> <br />
                     <HRLine /> <br />
-                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button> 
+                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button>
                     <Button color="white" bg="#1760ce"><AiFillFacebook />&nbsp; Sign in with Facebook</Button>
                     <p>We’ll never post to Facebook without your permission
                     </p> <br />

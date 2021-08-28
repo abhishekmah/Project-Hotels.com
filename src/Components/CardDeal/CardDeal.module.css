@@ -1,0 +1,40 @@
+.details{
+    width: 80%;
+    /* margin-left: 50px; */
+} 
+.details>img{
+
+    margin-top: 6%;
+    width: 252px;
+    height: 140px;
+}
+.details>h1{
+
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.details>p{
+
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.details>h2{
+
+    font-size: 18px;
+    color: rgb(10, 128, 10);
+    margin-bottom: 25px;
+}
+
+.details>button{
+
+    margin-left: 50px;
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+    border: 1px solid blue;
+    font-weight: 600;
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    
+}

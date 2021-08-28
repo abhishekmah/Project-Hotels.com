@@ -1,5 +1,5 @@
 import React from "react";
-import './CarouselAerro.css'
+import {Link} from "react-router-dom";
 import { CardLG } from "../../Components/CardLG/CardLG";
 import { CardSM } from "../../Components/CardSM/CardSM";
 import { CovidAd } from "../../Components/CovidAd/CovidAd";
@@ -12,17 +12,14 @@ import { Footer } from "../../Components/Footer/Footer";
 import { CardWide } from "../../Components/CardWide/CardWide";
 import Carousel from 'react-elastic-carousel'
 import Slider from "react-slick";
+import { Button } from "../../Components/Button/Button";
+import { Rewards } from "../../Components/Rewards/Rewards";
+import { Why } from "../../Components/Why/Why";
 
 
 
 const Home = () => {
-const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+
     
   return (
     <div className={styles.home}>
@@ -36,7 +33,7 @@ const settings = {
         </div>
       </div>
       <div className={styles.home__body}>
-        <HRLine />
+        {/* <HRLine /> */}
         <h2 className={styles.home__cardSMHeading}>Find a place nearby</h2>
         <div className={styles.home__Card}>
           <CardSM>
@@ -82,6 +79,8 @@ const settings = {
             <p>Gopalpur</p>
           </CardSM>
         </div>
+        <HRLine />
+        <Why/>
         <HRLine />
 
                    <h2 className={styles.home__cardLGHeading}>A snapshot of the world’s most picture-perfect properties</h2>
@@ -151,24 +150,30 @@ const settings = {
             <p>Kakslauttanen Arctic Resort</p>
             <span>Finland</span>
           </CardLG>
-              </div>
+        </div>
+        
+        <div className={styles.home__seemoreBtn}>
+          
+          <Button bg="white" color="royalblue" border="1px solid #aaa" >SEE MORE</Button>
+        </div>
+        
               <HRLine />
               <TravelWithConfidence />
+        <HRLine />
+        
+          <Rewards/>
+
               <HRLine />
-
-              
-
-
                 <h2 className={styles.home__cardSMHeading}>Start planning your next getaway</h2>
               <div className={styles.Home__CardWide}>
-                  <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
+      <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
                   <CardWide>
-                      <img
-              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
-              alt="Last Minute Deals"
-            />
-            <p>Last Minute Deals</p>
-            <span>It's never too late to get great prices</span>
+                    <Link to="/lastMinDeals" style={{textDecoration: "none"}}>
+                      <img src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
+                      alt="Last Minute Deals"/>
+                    <p>Last Minute Deals</p>
+                    <span>It's never too late to get great prices</span>
+                    </Link>
                   </CardWide>
                   <CardWide>
                       <img

@@ -30,6 +30,8 @@
     color: #d32f2f;
     font-weight: 500;
     font-size: 14px;
+    display: flex;
+    align-items: center;
 }
 .nav__menus p:hover{
     background-color: #f4f4f4;
@@ -52,4 +54,8 @@
 .nav__extrasLink p:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.nav__arroeDropdown{
+    font-size: 16px;
 }

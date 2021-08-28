@@ -5,7 +5,8 @@ import { HRLine } from '../../Components/HorizontalLine/HRLine'
 import { FaApple } from 'react-icons/fa';
 import { AiFillFacebook } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
-import { Footer } from '../../Components/Footer/Footer';
+import {Link} from 'react-router-dom'
+
 
 const Container = styled.div`
 background-color: #eee;
@@ -64,7 +65,7 @@ const Signin = () => {
                     <input type="text" /><br /><br />
                     <p>Forgot your password?</p>
                     <Button color="white" bg="#1963a0">Sign in</Button> <br />
-                    <p>Don't have an acount? <span className="signup">Signup</span></p> <br />
+                    <p>Don't have an acount? <Link to="/signup"><span className="signup">Signup</span></Link></p> <br />
                     <p>Find your booking using your confirmation number</p> <br />
                     <HRLine /> <br />
                     <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button> 

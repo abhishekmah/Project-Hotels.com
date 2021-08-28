@@ -1,18 +1,15 @@
-import { Box, Paper, Typography, makeStyles } from "@material-ui/core";
-import axios from "axios";
+import { Box, Paper, Typography, makeStyles, Button } from "@material-ui/core";
 import { Address } from "./Address";
 import { Amenities } from "./Amenities";
 import React from "react";
-import InfiniteScroll from "react-infinite-scroll-component"
 
 const useStyles = makeStyles({
   root: {
     display: "flex",
     gap: "1rem",
-    width: "70%",
+    width: "100%",
     flexDirection: "row",
     padding: "1rem",
-    fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
   },
   imageBox: {
     width: "30%",
@@ -65,11 +62,17 @@ export function SearchCard({ data }) {
             </Box>
             <Box className={classes.priceBox}>
               <Typography variant="h5" bold>
-                <b>{data.price}</b>
+                <b>${data.price3}</b>
+              </Typography>
+              <Typography variant="subtitle2" className={classes.excuding}>
+                nightly price per room
               </Typography>
               <Typography variant="subtitle2" className={classes.excuding}>
                 excluding taxes & fees
               </Typography>
+              <Button variant="contained" color="primary">
+                <h4 style={{ color: "white" }}>Book Now</h4>
+              </Button>
             </Box>
           </Paper>
         </Box>

@@ -1,17 +1,18 @@
-import React from 'react'
-import styles from "./LastDeals.module.css"
+import React from 'react';
+import styles from "./LastDeals.module.css";
+import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 import { BiSearchAlt } from "react-icons/bi";
 import { TiInputChecked } from "react-icons/ti";
 import { IoEarthSharp } from "react-icons/io5";
-import { RiArrowLeftSLine } from "react-icons/ri";
-import { RiArrowRightSLine } from "react-icons/ri";
-import Carousel from 'react-elastic-carousel'
-import CardDeal from "../../Components/CardDeal/CardDeal"
+import Carousel from 'react-elastic-carousel';
+import CardDeal from "../../Components/CardDeal/CardDeal";
+import {Footer} from "../../Components/Footer/FooterDealsPage/FooterDeals";
 
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import { Navbar } from "../../Components/NavbarLastDeals/NavbarLastDeals"
+import { Navbar } from "../../Components/NavbarLastDeals/NavbarLastDeals";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +33,19 @@ export default function LastMinDeals(){
     country: '',
     name: 'hai',
   });
+  const [hotel, setHotel] = React.useState([]);
+
+  React.useEffect(() => {
+    getData();
+  }, [])
+
+  const getData = () => {
+    axios.get("http://localhost:3001/data/?_limit=29")
+    .then((res) => {
+        console.log(res.data);
+        setHotel(res.data);
+    })
+}
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -64,11 +78,11 @@ export default function LastMinDeals(){
 
                     <p><TiInputChecked id={styles.icon1}/>Pay now or later <span style={{color:"#4e4e4e", fontSize: 12,fontWeight: 600}}>on most rooms</span></p>
 
-                    <p style={{color: "#003789"}}><TiInputChecked id={styles.icon1}/>Price Guarantee</p>
+                    <p style={{color: "#003789"}}><TiInputChecked id={styles.icon2}/>Price Guarantee</p>
                 </div>
                 <br />
                 <div className={styles.countryCont}>
-                    <h1 ><IoEarthSharp id={styles.icon3}/> Select country</h1>
+                    <h1 id={styles.h1}><span><IoEarthSharp style={{color: "rgb(29, 29, 253)"}}/></span> Select country</h1>
 
                     <FormControl className={classes.formControl}>
                         <NativeSelect
@@ -100,80 +114,62 @@ export default function LastMinDeals(){
                         </NativeSelect>
                     </FormControl>
                 </div>
+                
+                {hotel.map((data) => (
 
-                <div className={styles.dataMain}>
-
-                  <p>Los Angeles, California <span style={{fontSize: 18, marginLeft: 5, color: "rgb(72, 72, 253)", fontWeight: 600}}>view all deals</span></p>
-
-                  <div className={styles.data}>
-                  <img src="https://a.cdn-hotels.com/gdcs/production49/d345/be182590-b7a1-11e6-9c00-0242ac110047.jpg" alt="" />
-
-                  <Carousel >
-
-                    <CardDeal>
-                    <img src="https://exp.cdn-hotels.com/hotels/1000000/30000/25200/25151/65529629_b.jpg" alt="" />
-                    <h1>Kawada Hotel</h1>
-                    <p>3 Stars</p>
-                    <h2>Good  7.4/10</h2>
-                    <button>Check Price</button>
-                    </CardDeal>
-
-                    <CardDeal>
-                    <img src="https://exp.cdn-hotels.com/hotels/1000000/20000/12300/12287/7ebe71bf_b.jpg" alt="" />
-                    <h1>Kawada Hotel</h1>
-                    <p>3 Stars</p>
-                    <h2>Good  7.4/10</h2>
-                    <button>Check Price</button>
-                    </CardDeal>
-
-                    <CardDeal>
-                    <img src="https://exp.cdn-hotels.com/hotels/2000000/1580000/1579000/1578972/7d590d32_b.jpg" alt="" />
-                    <h1>Kawada Hotel</h1>
-                    <p>3 Stars</p>
-                    <h2>Good  7.4/10</h2>
-                    <button>Check Price</button>
-                    </CardDeal>
+                  <div key={uuidv4()} className={styles.first}>
+                      <div className={styles.dataMain}>
+                                  
+                      <p>Los Angeles, California <span style={{fontSize: 18, marginLeft: 5, color: "rgb(72, 72, 253)", fontWeight: 600}}>view all deals</span></p>
+                                  
+                      <div className={styles.data}>
+                        <div>
+                        <img src={data.images[0].url} alt="" />
+                        </div>             
+                
+                      <Carousel swipe={true} pagination={true} showArrows={false}>
+                
+                        {data.images.map((item) => (
+                          <CardDeal key={uuidv4()} style={{margin: "auto"}}>
+                          <img src={item.url} />
+                          <h1>{data.name}</h1>
+                          <p>{data.starRating}  stars</p>
+                          <h2>Good  {data.rating}/10</h2>
+                          <div style={{color: "#d32f2f",fontSize: 10, marginBottom: 5}}>
+                          <hr style={{backgroundColor: "#d32f2f",marginBottom: 4,marginTop: -16,border: "none",height: 1}}/>
+                          <h1>Save up to 15% </h1>
+                          <p style={{fontSize: 14, fontWeight: 500}}>Travel between Sun 31 May 2020 - Thu 30 December 2021</p>
+                          <hr  style={{backgroundColor: "#d32f2f",marginTop: 6,border: "none",height: 1}}/>
+                          </div>
+                          <button>Check Price</button>
+                          </CardDeal>
+                        ))}
                     
-                  </Carousel>
+                      </Carousel>
+                                      
+                      </div>
+                    </div>                                  
 
-                  {/* <div style={{color: "blue",cursor: "pointer"}}>
-                      <RiArrowRightSLine style={{width: 50,height: 40,position: "relative", top: "47%"}}/>
-                  </div> */}
-                  </div>
-                  
-                </div>
-                 <div className={styles.priceCard}>
-                    <h1>5-star <span style={{fontWeight: 400}}>average</span></h1>
+                    <div className={styles.priceCard}>
+                    <h1>5-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
                     <br />
-                    <h1>4-star <span style={{fontWeight: 400}}>average</span></h1>
+                    <h1>4-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
                     <br />
-                    <h1>3-star <span style={{fontWeight: 400}}>average</span></h1>
+                    <h1>3-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
                     <br />
                     <button>View all deals</button>
                   </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+                  </div>
+                  
+                ))}
+          
+                
+
             </div>
+            <div className={styles.dataDiv1}>
+            <Footer />
+            </div>
+           
         </div>
     )
 }

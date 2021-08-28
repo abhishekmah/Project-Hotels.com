@@ -5,8 +5,8 @@ import { HRLine } from '../../Components/HorizontalLine/HRLine'
 import { FaApple } from 'react-icons/fa';
 import { AiFillFacebook } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
+import { Footer } from '../../Components/Footer/Footer';
 import {Link} from 'react-router-dom'
-
 
 const Container = styled.div`
 background-color: #eee;
@@ -28,9 +28,13 @@ font-size: 14px;
 input[type="text"]{
 width: 100%;
 height: 2rem;
+:focus{
+outline: 1px solid steelblue;
+}
 }
 .signup{
     color: steelblue;
+    text-decoration: none;
 }
 
 `
@@ -50,37 +54,34 @@ justify-content: center;
     cursor: pointer;
 }
 `
-const Signin = () => {
+const Signup = () => {
     return (
         <div>
             <Navbar />
             <HRLine color="#d32f2f"/>
             <Container>
                 <Form>
-                    <h2>Signin</h2><br />
-                    <label htmlFor="">Email address</label><br />
-                    <input type="text" /> <br /><br />
-                    <input type="checkbox" /> Sign me in automatically next time<br /><br />
-                    <label htmlFor="">Email address</label><br />
-                    <input type="text" /><br /><br />
-                    <p>Forgot your password?</p>
-                    <Button color="white" bg="#1963a0">Sign in</Button> <br />
-                    <p>Don't have an acount? <Link to="/signup"><span className="signup">Signup</span></Link></p> <br />
-                    <p>Find your booking using your confirmation number</p> <br />
-                    <HRLine /> <br />
-                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button>
+                    <h2>Create an account</h2><br />
+                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button> 
                     <Button color="white" bg="#1760ce"><AiFillFacebook />&nbsp; Sign in with Facebook</Button>
                     <p>We’ll never post to Facebook without your permission
                     </p> <br />
                     <HRLine /> <br />
-
-                    <h3><FcGoogle/> Looing to signin with google?</h3> <br />
-                    <p>We no longer offer that option. But if you have an existing Google account, we’ll ask you to create a new password. That way, you’ll have direct access to your Hotels.com account whenever you sign in.</p>
-                    <br />
-                    <p className="signup">Create password</p> <br />
-                    <HRLine /> <br />
-                    <p>Are you a travel agent?</p>
-                    <p>Please visit <span className="signup">travel agency platform </span></p>
+                    <label htmlFor="">Email address</label><br />
+                    <input type="text" /> <br /><br />
+                    
+                    <label htmlFor="">Password</label><br />
+                    <input type="text" /><br /><br />
+                    <label htmlFor="">Firstname</label><br />
+                    <input type="text" /><br /><br />
+                    <label htmlFor="">Lastname</label><br />
+                    <input type="text" /><br /><br />
+                    <input type="checkbox" /> Keep me signed in<br /><br />
+                    <input type="checkbox" checked/> Please email me great deals, last-minute offers and information about hotels<br /><br />
+                    <p>By signing up you accept the <span className="signup">Terms and Conditions</span> and <span className="signup">Privacy Statement</span></p>
+                    <Button color="white" bg="#1963a0">Create account</Button> <br />
+                
+                    <p>Already have an account? <Link to="/signin"><span className="signup">Signin </span> </Link></p>
                 </Form>
 
             </Container>
@@ -89,4 +90,4 @@ const Signin = () => {
     )
 }
 
-export  {Signin}
+export  {Signup}

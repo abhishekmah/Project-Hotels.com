@@ -152,10 +152,13 @@ export default function LastMinDeals(){
 
                     <div className={styles.priceCard}>
                     <h1>5-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
+                    <h2>Rs {data.price5}</h2>
                     <br />
                     <h1>4-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
+                    <h2>Rs {data.price4}</h2>
                     <br />
                     <h1>3-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
+                    <h2>Rs {data.price3}</h2>
                     <br />
                     <button>View all deals</button>
                   </div>

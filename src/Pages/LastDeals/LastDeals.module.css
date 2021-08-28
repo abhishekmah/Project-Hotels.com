@@ -135,8 +135,7 @@ box-shadow: 5px 5px 25px grey;
     z-index: 2;
     top: 20%;
     left: 5%;
-    width: 10%;
-    height: 230px;
+    width: 11%;
     padding: 1%;
     border-radius: 7px;
     background-color: #d32f2f;
@@ -146,11 +145,16 @@ box-shadow: 5px 5px 25px grey;
     color: white;
     font-size: 18px;
 }
+.first>.priceCard>h2{
+
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
 .first>.priceCard>button{
 
     background-color: rgb(60, 60, 250);
     cursor: pointer;
-    margin-top: 45px;
     border-radius: 3px;
     width: 120px;
     height: 45px;

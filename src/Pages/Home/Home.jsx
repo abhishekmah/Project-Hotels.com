@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { CardLG } from "../../Components/CardLG/CardLG";
 import { CardSM } from "../../Components/CardSM/CardSM";
 import { CovidAd } from "../../Components/CovidAd/CovidAd";
@@ -167,12 +168,12 @@ const Home = () => {
               <div className={styles.Home__CardWide}>
       <Carousel itemsToScroll={1} itemsToShow={3} pagination={false} showArrows={false} focusOnSelect={true} enableSwipe={ true}>
                   <CardWide>
-                      <img
-              src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
-              alt="Last Minute Deals"
-            />
-            <p>Last Minute Deals</p>
-            <span>It's never too late to get great prices</span>
+                    <Link to="/lastMinDeals" style={{textDecoration: "none"}}>
+                      <img src="https://a.cdn-hotels.com/cos/production/a5835985-70a9-4566-a678-c3a5d4b0162f/0.40/3a90bb7e-e63c-46b0-858b-14865ac13fc3.jpg"
+                      alt="Last Minute Deals"/>
+                    <p>Last Minute Deals</p>
+                    <span>It's never too late to get great prices</span>
+                    </Link>
                   </CardWide>
                   <CardWide>
                       <img

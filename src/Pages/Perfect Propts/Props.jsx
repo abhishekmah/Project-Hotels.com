@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
-import { Link } from "react-router-dom";
 // import GoogleMap from '../../Map//GoogleMap';
 
 export default function Propts() {

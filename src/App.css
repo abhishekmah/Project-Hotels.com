@@ -1,7 +1,13 @@
 * {
   margin: 0;
+<<<<<<< HEAD
   font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular",
     "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
     sans-serif;
+||||||| ada488c
+  font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;;
+=======
+  font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+>>>>>>> 601c6948edfa26d2a2ce2219f924eb0c4d167458
   color: #1a1c1b;
 }

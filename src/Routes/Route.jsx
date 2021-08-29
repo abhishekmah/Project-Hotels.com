@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch,Route} from 'react-router-dom'
-import { Signin } from '../Pages/Auth/Signin'
+import { SigninPage } from '../Pages/Auth/SigninPage'
+import { Signup } from '../Pages/Auth/Signup'
 import { Home } from '../Pages/Home/Home'
 import LastMinDeals from '../Pages/LastDeals/LastMinDeals'
 
@@ -9,8 +10,8 @@ const Routes = () => {
         <div>
             <Switch>
                 <Route exact path="/" > <Home/> </Route>
-                <Route path="/signin" > <Signin/> </Route>
-                <Route path="/signup" > </Route>
+                <Route path="/signin" > <SigninPage/> </Route>
+                <Route path="/signup" > <Signup/> </Route>
                 <Route path="/lastMinDeals" > <LastMinDeals/></Route>
             </Switch>
             

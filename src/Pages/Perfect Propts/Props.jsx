@@ -5,7 +5,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import GoogleMap from './GoogleMap';
+import { Footer } from "../../Components/Footer/Footer";
+import { CovidAd } from "../../Components/CovidAd/CovidAd";
+import { Navbar } from "../../Components/Navbar/Navbar";
+import { HRLine } from "../../Components/HorizontalLine/HRLine";
+// import GoogleMap from '../../Map//GoogleMap';
 
 export default function Propts() {
   let temp = { images: [], address: { line1: "" } };
@@ -29,6 +33,9 @@ export default function Propts() {
 
   return (
     <div className="body">
+      <CovidAd />
+      <HRLine />
+      <Navbar />
       <div className="section1">
         <div className="hotelBrief">
           <div className="hotelName">
@@ -865,6 +872,7 @@ export default function Propts() {
           </ol>
         </nav>
       </section>
+      <Footer/>
     </div>
   );
 }

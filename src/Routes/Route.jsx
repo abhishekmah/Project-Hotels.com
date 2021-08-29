@@ -8,6 +8,7 @@ import { Payment } from "../Pages/Payment/Payment";
 import { SigninPage } from "../Pages/Auth/SigninPage";
 import { SearchResultPage } from "../Pages/SearchResult/SearchResultPage";
 import Props from "../Pages/Perfect Propts/Props";
+import GoogleMapShw from "../Pages/MAP/GoogleMapShw"
 
 const Routes = () => {
   return (
@@ -28,20 +29,20 @@ const Routes = () => {
         <Route path={`/hotel/:hotelId`}>
           <Props />
         </Route>
+        <Route path="/hotel/map">
+          <GoogleMapShw />
+        </Route>
         <Route path="/search/:query">
           <SearchResultPage />
         </Route>
         <Route path="/signup">
-         
           <Signup />
         </Route>
         <Route path="/payment">
-        
           <Payment />
         </Route>
 
         <Route path="/lastMinDeals">
-         
           <LastMinDeals />
         </Route>
       </Switch>

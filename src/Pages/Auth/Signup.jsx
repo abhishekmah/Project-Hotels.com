@@ -76,7 +76,7 @@ const Signup = () => {
         {
             data = [];
         }
-        if(email != "" && password != "" && first != "" && last != ""){
+        if(email !== "" && password !== "" && first !== "" && last !== ""){
             data.push(payload)
             setData("data", data);
             alert("Account has been created !!");

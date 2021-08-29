@@ -10,9 +10,6 @@ function App() {
   return (
     <div className="App">
       <Routes />
-
-      {/* <SearchResultPage />
-      <GetData /> */}
     </div>
   );
 }

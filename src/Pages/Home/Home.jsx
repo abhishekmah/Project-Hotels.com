@@ -15,6 +15,7 @@ import Carousel from 'react-elastic-carousel'
 import { Button } from "../../Components/Button/Button";
 import { Rewards } from "../../Components/Rewards/Rewards";
 import { Why } from "../../Components/Why/Why";
+import SearchBar from '../../Components/CardHotelSearch/SearchBar'
 
 
 
@@ -23,13 +24,14 @@ const Home = () => {
     
   return (
     <div className={styles.home}>
-      <CovidAd />
+      {/* <CovidAd />
       <HRLine />
-      <Navbar />
+      <Navbar /> */}
       <div className={styles.home__backgroundImage}>
         <img src="./images/backgroundImg.png" alt="" />
         <div className={styles.searchCard}>
           <p>Where to?</p>
+          <SearchBar/>
         </div>
       </div>
       <div className={styles.home__body}>
@@ -293,8 +295,8 @@ const Home = () => {
             <p>Ryokans</p>
           </CardSM>
         </div>
-              <HRLine />
-              <Footer/>
+              {/* <HRLine /> */}
+              {/* <Footer/> */}
       </div>
     </div>
   );

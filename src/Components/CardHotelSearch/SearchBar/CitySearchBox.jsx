@@ -76,25 +76,37 @@ const WrapperTextField = styled(TextField)`
 export function CitySearchBox({ classes, handleOnChange }) {
   // const [value, setValue] = useState("");
 
+  const [value, setValue] = useState(cities[0]);
+  const [inputValue, setInputValue] = useState("");
+
+  // console.log(value, inputValue)
+
   // setTitle(value.title);
 
   // console.log(value);
 
   return (
     <Autocomplete
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      inputValue={handleOnChange(inputValue)}
+      onInputChange={(event, newInputValue) => {
+        setInputValue(newInputValue);
+      }}
       id="combo-box-demo"
       options={cities}
       getOptionLabel={(option) => option.title}
       style={{ width: 300 }}
       renderInput={(params) => (
         <TextField
-      {...params}
-      label="e.g Spain"
-      variant="filled"
-      onChange={handleOnChange}
-    />
+          {...params}
+          label="e.g Spain"
+          variant="filled"
+          onChange={() => handleOnChange(inputValue)}
+        />
       )}
     />
-    
   );
 }

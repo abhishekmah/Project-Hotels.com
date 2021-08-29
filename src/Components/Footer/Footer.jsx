@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 margin: 1rem 0;
+width: 80%;
+margin: auto;
 
 .Footer__links{
     p{

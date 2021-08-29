@@ -1,11 +1,7 @@
 import { useState } from "react";
 import Autocomplete, {
-  createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
-import styled from "styled-components";
-
-// const filter = createFilterOptions();
 
 const cities = [
   { title: "Spain" },
@@ -69,32 +65,33 @@ const cities = [
   { title: "Bari Sardo, Italy" },
 ];
 
-const WrapperTextField = styled(TextField)`
-  /* height: 100000px; */
-`;
-
 export function CitySearchBox({ classes, handleOnChange }) {
-  // const [value, setValue] = useState("");
 
-  // setTitle(value.title);
-
-  // console.log(value);
+  const [value, setValue] = useState(cities[0]);
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <Autocomplete
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      inputValue={handleOnChange(inputValue)}
+      onInputChange={(event, newInputValue) => {
+        setInputValue(newInputValue);
+      }}
       id="combo-box-demo"
       options={cities}
       getOptionLabel={(option) => option.title}
       style={{ width: 300 }}
       renderInput={(params) => (
         <TextField
-      {...params}
-      label="e.g Spain"
-      variant="filled"
-      onChange={handleOnChange}
-    />
+          {...params}
+          label="e.g Spain"
+          variant="filled"
+          onChange={() => handleOnChange(inputValue)}
+        />
       )}
     />
-    
   );
 }

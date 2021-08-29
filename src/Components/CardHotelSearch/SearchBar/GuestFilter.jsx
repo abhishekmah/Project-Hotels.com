@@ -7,7 +7,7 @@ export function GuestFilter() {
   const [showRoomSelector, setShowRoomSelector] = useState(false);
 
   return (
-    <Box style={{ userSelect: "none" }}>
+    <Box>
       <TextField
         id="filled-multiline-flexible"
         label="Guests"
@@ -19,7 +19,12 @@ export function GuestFilter() {
         onClick={() => setShowRoomSelector(!showRoomSelector)}
         variant="filled"
       />
-      {showRoomSelector && <SelectGuest setValue={setValue} />}
+      {showRoomSelector && (
+        <SelectGuest
+          setValue={setValue}
+          style={{ position: "absolute", zIndex: "1" }}
+        />
+      )}
     </Box>
   );
 }

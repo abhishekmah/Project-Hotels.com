@@ -1,1 +1,110 @@
-
+* {
+  margin: 0px;
+}
+.body {
+  padding: 0px 11rem 0px 11rem;
+  font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular",
+    "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+    sans-serif;
+  font-size: 14px;
+}
+.body div {
+  /* border: 1px solid red; */
+  margin: 0px;
+}
+.book {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  background-color: #156bc1;
+}
+hr {
+  height: 0px;
+  border-top: 1px solid rgb(197, 197, 197);
+  border-bottom: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.wifi {
+  color: green;
+}
+.section1 {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+#star {
+  margin-bottom: 0.5rem;
+  margin-left: 0.4rem;
+  font-weight: 700;
+}
+#star > span {
+  color: rgb(219, 73, 73);
+}
+.hotelBrief {
+  width: 70%;
+}
+.hotelName {
+  display: flex;
+}
+.price {
+  width: 30%;
+  text-align: right;
+}
+.section1 ul {
+  display: flex;
+  list-style: none;
+}
+.section1 li {
+  margin-right: 1rem;
+}
+#carousel {
+  width: 70%;
+}
+.section2 {
+  display: flex;
+  margin-top: 5rem;
+}
+.map,
+.review {
+  padding-left: 2rem;
+}
+.map img,
+span {
+  width: 320px;
+}
+.largeMap {
+  overflow: hidden;
+}
+#largeMap {
+  overflow: hidden;
+  max-width: 100%;
+}
+.price h1,
+a {
+  margin: 0px;
+}
+.purple {
+  color: purple;
+  text-decoration: underline;
+}
+.price span,
+a {
+  font-size: 11px;
+  margin-top: -10px;
+  padding: 0px;
+  line-height: 0cm;
+}
+.addressMap {
+  font-weight: bold;
+}
+.reviewRating {
+  width: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: rgb(1, 167, 1);
+}

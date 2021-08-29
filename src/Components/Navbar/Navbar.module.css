@@ -21,19 +21,18 @@
 .nav__navbar > img{
     height:33px
 }
-#nav__menus{
+.nav__menus{
     display: flex;
 }
-#nav__menus p{
+.nav__menus p{
     margin: 0.25rem 0.3rem;
     padding: 0.5rem 0.5rem;
     color: #d32f2f;
     font-weight: 500;
     font-size: 14px;
-    display: flex;
     align-items: center;
 }
-#nav__menus p:hover{
+.nav__menus p:hover{
     background-color: #f4f4f4;
     cursor: pointer;
     border-radius: 0.25rem;

@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className={styles.nav}>
             <div className={styles.nav__navbar}>
             <Links to="/"><img src="./images/hotels-logo1.png" alt="Hotels Logo"   height="33px"/></Links>
-                <div  id={styles.nav__menus}>
+                <div  className={styles.nav__menus}>
                     <p onClick={handleCountry}> <img src="./images/india.png" alt="india icon" width="15px" /> <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>

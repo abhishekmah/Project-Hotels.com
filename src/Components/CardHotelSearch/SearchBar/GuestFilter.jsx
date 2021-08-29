@@ -17,7 +17,7 @@ export function GuestFilter() {
         value={value}
         // disabled={true}
         onClick={() => setShowRoomSelector(!showRoomSelector)}
-        variant="outlined"
+        variant="filled"
       />
       {showRoomSelector && <SelectGuest setValue={setValue} />}
     </Box>

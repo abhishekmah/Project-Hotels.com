@@ -13,7 +13,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { useState } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 
 function valuetext(value) {
   return `${value}`;
@@ -21,13 +21,8 @@ function valuetext(value) {
 
 const useStyle = makeStyles({
   text: {
-    variant: "body1",
     fontWeight: "700",
   },
-  list:{
-    margin: "0",
-    padding: "0"
-  }
 });
 
 const WrapperButton = styled.button`
@@ -54,7 +49,7 @@ export function Filter() {
 
   const [state, setState] = useState(popularFilters);
 
-  const [value, setValue] = useState([0, 200000]);
+  const [value, setValue] = useState([100, 10000]);
 
   const [guestRating, setGuestRating] = useState([0, 10]);
 
@@ -78,53 +73,53 @@ export function Filter() {
       </Typography>
       <TextField placeholder="Property Name" variant="outlined" />
       <hr style={{ margin: "1rem 0" }} />
-      <Typography className={classes.text} variant="body1">
-        Popular Filter
-      </Typography>
-      {popularFilters.map((item) => {
-        return (
-          <List>
-            <ListItem
-              key={item.value}
-              role={undefined}
-              // dense
-              button
-              className={classes.list}
-              onClick={(e) => handleValue(item)}
-            >
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  //   checked={item.checked}
-                  tabIndex={-1}
-                  disableRipple
-                  color="#3880ff"
-                  //   inputProps={{ "aria-labelledby": labelId }}
-                />
-              </ListItemIcon>
-              
-              <ListItemText primary={`${item.value}`} className={classes.list}/>
-            </ListItem>
-          </List>
-        );
-      })}
+      <Box>
+        <Typography className={classes.text} variant="body1">
+          Popular Filter
+        </Typography>
+        <List>
+          {popularFilters.map((item) => {
+            return (
+              <ListItem
+                key={item.value}
+                role={undefined}
+                dense
+                button
+                // onClick={(e) => {}}
+              >
+                <ListItemIcon>
+                  <Checkbox
+                    style={{ width: "20px" }}
+                    edge="start"
+                    color="primary"
+                    disableRipple
+                  />
+                </ListItemIcon>
+                <ListItemText primary={item.value} className={classes.text} />
+              </ListItem>
+            );
+          })}
+        </List>
+      </Box>
       <hr style={{ margin: "1rem 0" }} />
 
-      <Typography className={classes.text} variant="body1">
-        Nightly Price:
-      </Typography>
-      <Typography variant="body1">
-        Rs{value[0]} - {value[1]}
-      </Typography>
-      <Slider
-        value={value}
-        className={classes.slider}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        aria-labelledby="range-slider"
-        max={200000}
-        min={0}
-      />
+      <Box>
+        <Typography className={classes.text} variant="body1">
+          Nightly Price:
+        </Typography>
+        <Typography variant="body1">
+          Rs{value[0]} - {value[1]}
+        </Typography>
+        <Slider
+          value={value}
+          // className={classes.slider}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          // aria-labelledby="range-slider"
+          max={10000}
+          min={0}
+        />
+      </Box>
       <hr style={{ margin: "1rem 0" }} />
 
       <Typography className={classes.text} variant="body1">
@@ -176,8 +171,10 @@ export function Filter() {
         >
           <ListItemIcon>
             <Checkbox
+              style={{ width: "20px" }}
+              color="primary"
               edge="start"
-              //   checked={item.checked}
+              // checked={item.checked}
               tabIndex={-1}
               disableRipple
               //   inputProps={{ "aria-labelledby": labelId }}

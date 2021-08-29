@@ -11,7 +11,7 @@ import styles from "./Home.module.css";
 import { Footer } from "../../Components/Footer/Footer";
 import { CardWide } from "../../Components/CardWide/CardWide";
 import Carousel from 'react-elastic-carousel'
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import { Button } from "../../Components/Button/Button";
 import { Rewards } from "../../Components/Rewards/Rewards";
 import { Why } from "../../Components/Why/Why";

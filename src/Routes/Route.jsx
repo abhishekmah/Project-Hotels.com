@@ -8,11 +8,19 @@ import { Payment } from "../Pages/Payment/Payment";
 import { SigninPage } from "../Pages/Auth/SigninPage";
 import { SearchResultPage } from "../Pages/SearchResult/SearchResultPage";
 import Props from "../Pages/Perfect Propts/Props";
-import GoogleMapShw from "../Pages/MAP/GoogleMapShw"
+import { Navbar } from "../Components/Navbar/Navbar";
+import { CovidAd } from '../Components/CovidAd/CovidAd';
+import {HRLine} from '../Components/HorizontalLine/HRLine'
+import { Footer } from "../Components/Footer/Footer";
+import GoogleMapShw from '../Pages/MAP/GoogleMapShw'
 
 const Routes = () => {
   return (
     <div>
+      <CovidAd />
+      <HRLine />
+      <Navbar />
+      <HRLine />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -46,6 +54,8 @@ const Routes = () => {
           <LastMinDeals />
         </Route>
       </Switch>
+      <HRLine/>
+      <Footer/>
     </div>
   );
 };

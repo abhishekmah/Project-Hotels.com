@@ -1,11 +1,7 @@
 import { useState } from "react";
 import Autocomplete, {
-  createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
-import styled from "styled-components";
-
-// const filter = createFilterOptions();
 
 const cities = [
   { title: "Spain" },
@@ -69,21 +65,10 @@ const cities = [
   { title: "Bari Sardo, Italy" },
 ];
 
-const WrapperTextField = styled(TextField)`
-  /* height: 100000px; */
-`;
-
 export function CitySearchBox({ classes, handleOnChange }) {
-  // const [value, setValue] = useState("");
 
   const [value, setValue] = useState(cities[0]);
   const [inputValue, setInputValue] = useState("");
-
-  // console.log(value, inputValue)
-
-  // setTitle(value.title);
-
-  // console.log(value);
 
   return (
     <Autocomplete

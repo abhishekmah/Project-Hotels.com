@@ -2,6 +2,7 @@ import { Box, Typography, makeStyles, Button } from "@material-ui/core";
 import { Address } from "./SearchCard/Address";
 import { Amenities } from "./SearchCard/Amenities";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -158,13 +159,15 @@ export function SearchCard({ data }) {
               >
                 excluding taxes & fees
               </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.btn}
-              >
-                <h4 style={{ color: "white" }}>Book Now</h4>
-              </Button>
+              <NavLink to={`hotel/${data.hotelId}`}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.btn}
+                >
+                  <h4 style={{ color: "white" }}>Book Now</h4>
+                </Button>
+              </NavLink>
               {data.freeCancellation && (
                 <ul
                   className={`${classes.address}`}

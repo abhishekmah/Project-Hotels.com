@@ -12,6 +12,7 @@ import { Navbar } from "../Components/Navbar/Navbar";
 import { CovidAd } from '../Components/CovidAd/CovidAd';
 import {HRLine} from '../Components/HorizontalLine/HRLine'
 import { Footer } from "../Components/Footer/Footer";
+import GoogleMapShw from '../Pages/MAP/GoogleMapShw'
 
 const Routes = () => {
   return (
@@ -33,23 +34,23 @@ const Routes = () => {
         <Route path="/lastMinDeals">
           <LastMinDeals />
         </Route>
-        <Route path="/hotel/:hotleId">
+        <Route path={`/hotel/:hotelId`}>
           <Props />
+        </Route>
+        <Route path="/hotels/map">
+          <GoogleMapShw />
         </Route>
         <Route path="/search/:query">
           <SearchResultPage />
         </Route>
         <Route path="/signup">
-         
           <Signup />
         </Route>
         <Route path="/payment">
-        
           <Payment />
         </Route>
 
         <Route path="/lastMinDeals">
-         
           <LastMinDeals />
         </Route>
       </Switch>

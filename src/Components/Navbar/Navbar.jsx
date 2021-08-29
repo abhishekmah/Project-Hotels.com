@@ -28,7 +28,7 @@ const Navbar = () => {
                     <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p><FaRegCalendarAlt/> &nbsp; Your Bookings</p>
-                    {/* <p><Links to="/signin">{isAuth ? `${data[0].first} ${data[0].last}` : " Sign in"} </Links></p> */}
+                    <Links to="/signin"><p>{isAuth ? `${data[0].first} ${data[0].last}` : " Sign in"} </p></Links>
             </div>
             </div>
             <div className={styles.nav__extrasLink}>

@@ -9,9 +9,9 @@ export function SearchResult() {
   const [showData, setShowData] = useState([]);
 
   let query = "spain";
-  setShowData(() => {
-    title.filter((item) => item.name.includes(query));
-  });
+  // setShowData(() => {
+  //   title.filter((item) => item.name.includes(query));
+  // });
 
   useEffect(() => {
     getData();
@@ -28,7 +28,7 @@ export function SearchResult() {
 
   return (
     <Box>
-      {showData.slice(10 * page, (page + 1) * 10).map((item) => (
+      {title.slice(10 * page, (page + 1) * 10).map((item) => (
         <SearchCard key={item.hotelId} data={item} />
       ))}
       <Box>

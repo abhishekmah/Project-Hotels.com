@@ -9,10 +9,10 @@ import { GetData } from "./Components/CardHotelSearch/Data";
 function App() {
   return (
     <div className="App">
-      {/* <Routes/> */}
+      <Routes />
 
-      <SearchResultPage />
-      <GetData />
+      {/* <SearchResultPage />
+      <GetData /> */}
     </div>
   );
 }

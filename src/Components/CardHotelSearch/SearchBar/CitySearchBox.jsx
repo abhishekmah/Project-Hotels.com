@@ -1,7 +1,7 @@
 import { useState } from "react";
-// import Autocomplete, {
-//   createFilterOptions,
-// } from "@material-ui/lab/Autocomplete";
+import Autocomplete, {
+  createFilterOptions,
+} from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
 import styled from "styled-components";
 
@@ -81,20 +81,20 @@ export function CitySearchBox({ classes, handleOnChange }) {
   // console.log(value);
 
   return (
-    // <Autocomplete
-    //   id="combo-box-demo"
-    //   options={cities}
-    //   getOptionLabel={(option) => option.title}
-    //   style={{ width: 300 }}
-    //   renderInput={(params) => (
-
-    //   )}
-    // />
-    <TextField
-      // {...params}
+    <Autocomplete
+      id="combo-box-demo"
+      options={cities}
+      getOptionLabel={(option) => option.title}
+      style={{ width: 300 }}
+      renderInput={(params) => (
+        <TextField
+      {...params}
       label="e.g Spain"
       variant="filled"
       onChange={handleOnChange}
     />
+      )}
+    />
+    
   );
 }

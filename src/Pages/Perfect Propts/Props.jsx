@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import {Link} from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Footer } from "../../Components/Footer/Footer";
@@ -180,12 +181,15 @@ export default function Propts() {
           <button className="-MPqJ5">
             <span className="is-visually-hidden">map</span>
             <div className="_1FepWS">
-              <span className="_1Ac6YH _2NVtuq _1DW1ZH ZCedaV">
+            <Link to="/hotels/map">
+              <span class="_1Ac6YH _2NVtuq _1DW1ZH ZCedaV">
                 <img
-                  className="_3vohxN _2kg-Bh"
-                  alt="GoggleImage"
+                  class="_3vohxN _2kg-Bh"
+                  src="https://foodbank.bc.ca/wp-content/uploads/2016/04/Google-Map-of-Locations.png"
+                  alt=""
                 />
               </span>
+              </Link>
               <div className="FebmkO">
                 <span className="_2cLakF _2fSdu2 iXrmyZ">See on map</span>
               </div>

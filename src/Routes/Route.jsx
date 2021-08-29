@@ -29,7 +29,7 @@ const Routes = () => {
         <Route path={`/hotel/:hotelId`}>
           <Props />
         </Route>
-        <Route path="/hotel/map">
+        <Route path="/hotels/map">
           <GoogleMapShw />
         </Route>
         <Route path="/search/:query">

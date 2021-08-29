@@ -23,7 +23,7 @@ const Routes = () => {
         <Route path="/lastMinDeals">
           <LastMinDeals />
         </Route>
-        <Route path={`/hotel/:hotleId`}>
+        <Route path={`/hotel/:hotelId`}>
           <Props />
         </Route>
         <Route path={`/search/:query`}>

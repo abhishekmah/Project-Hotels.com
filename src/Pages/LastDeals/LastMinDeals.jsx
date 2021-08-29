@@ -37,6 +37,7 @@ export default function LastMinDeals(){
 
   React.useEffect(() => {
     getData();
+    document.title = "Last Minute Deals"
   }, [])
 
   const getData = () => {

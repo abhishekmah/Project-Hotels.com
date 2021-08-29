@@ -1,6 +1,6 @@
 import React from 'react'
-import './Propts.css';
-import './Propts2.css';
+import './Props.css';
+import './Props2.css';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import {Carousel} from 'react-responsive-carousel';

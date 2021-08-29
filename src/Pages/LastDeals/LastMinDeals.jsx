@@ -37,6 +37,7 @@ export default function LastMinDeals(){
 
   React.useEffect(() => {
     getData();
+    document.title = "Last Minute Deals"
   }, [])
 
   const getData = () => {
@@ -135,12 +136,10 @@ export default function LastMinDeals(){
                           <h1>{data.name}</h1>
                           <p>{data.starRating}  stars</p>
                           <h2>Good  {data.rating}/10</h2>
-                          <div style={{color: "#d32f2f",fontSize: 10, marginBottom: 5}}>
                           <hr style={{backgroundColor: "#d32f2f",marginBottom: 4,marginTop: -16,border: "none",height: 1}}/>
-                          <h1>Save up to 15% </h1>
-                          <p style={{fontSize: 14, fontWeight: 500}}>Travel between Sun 31 May 2020 - Thu 30 December 2021</p>
-                          <hr  style={{backgroundColor: "#d32f2f",marginTop: 6,border: "none",height: 1}}/>
-                          </div>
+                          <h1 style={{color: "#d32f2f",fontSize: 20}}>Save up to 15% </h1>
+                          <p style={{fontSize: 14, fontWeight: 500,color: "#d32f2f"}}>Travel between Sun 31 May 2020 - Thu 30 December 2021</p>
+                          <hr  style={{backgroundColor: "#d32f2f",marginTop: 6,border: "none",height: 1,marginBottom: 5}}/>
                           <button>Check Price</button>
                           </CardDeal>
                         ))}

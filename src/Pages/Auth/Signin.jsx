@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import styled from 'styled-components'
 import { HRLine } from '../../Components/HorizontalLine/HRLine'
@@ -50,7 +50,18 @@ justify-content: center;
     cursor: pointer;
 }
 `
-const Signin = () => {
+const Signin = ({handleLogin}) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleCheck = (e) => {
+        e.preventDefault();
+        let payload = {
+            email,
+            password,
+        }
+        handleLogin(payload);
+    }
     return (
         <div>
             <Navbar />
@@ -59,16 +70,19 @@ const Signin = () => {
                 <Form>
                     <h2>Signin</h2><br />
                     <label htmlFor="">Email address</label><br />
-                    <input type="text" /> <br /><br />
+                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}/> <br /><br />
+
                     <input type="checkbox" /> Sign me in automatically next time<br /><br />
-                    <label htmlFor="">Email address</label><br />
-                    <input type="text" /><br /><br />
+
+                    <label htmlFor="">Password</label><br />
+                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/><br /><br />
+                    
                     <p>Forgot your password?</p>
-                    <Button color="white" bg="#1963a0">Sign in</Button> <br />
+                    <Button onClick={handleCheck} color="white" bg="#1963a0">Sign in</Button> <br />
                     <p>Don't have an acount? <Link to="/signup"><span className="signup">Signup</span></Link></p> <br />
                     <p>Find your booking using your confirmation number</p> <br />
                     <HRLine /> <br />
-                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button> 
+                    <Button color="white" bg="#000"><FaApple/> &nbsp; Sign in with apple</Button>
                     <Button color="white" bg="#1760ce"><AiFillFacebook />&nbsp; Sign in with Facebook</Button>
                     <p>We’ll never post to Facebook without your permission
                     </p> <br />

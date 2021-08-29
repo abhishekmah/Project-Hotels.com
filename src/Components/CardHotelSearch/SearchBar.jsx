@@ -11,27 +11,32 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   textField: {
-    // marginLeft: theme.spacing(1),
-    // marginRight: theme.spacing(1),
     width: 220,
-    height: 10,
+    height: 20,
     backgroundColor: "white",
     size: "small",
+  },
+  textFieldCheckin: {
+    height: "70px",
+    backgroundColor: "white",
   },
   root: {
     display: "flex",
     width: "95%",
     gap: "1rem",
     margin: "1rem auto",
-    height: "58px",
-    alignItems: "baseLine",
+    height: "20p",
+    justifyItems: "space-between",
+    alignItems: "baseline",
   },
   btn: {
     color: "white",
     borderRadius: "1.75rem",
     height: "2.5rem",
     width: "10rem",
-    alignSelf: "center",
+    marginTop: "1rem",
+    alignSelf: "baseline",
+    fontWeight: "700",
   },
 }));
 
@@ -39,23 +44,29 @@ export default function SearchBar() {
   const classes = useStyles();
 
   const [formData, setFormData] = useState();
-  const [title, setTitle] = useState();
+  const [value, setValue] = useState({ title: "Spain" });
   // const [checkIn, setCheckIn] = useState();
 
-  console.log(title);
+  
 
-  // const handleOnChange = (e) => {
-  //   con
-  // }
+  const handleOnChange = (e) => {
+    setValue(e.target.value);
+    console.log(e.target.value);
+  }
 
   return (
     <Box className={classes.root}>
-      <CitySearchBox classes={classes} setTitle={setTitle} />
+      <CitySearchBox classes={classes} handleOnChange={handleOnChange} />
       <CheckInOut classes={classes} />
       <GuestFilter />
-      <NavLink to={`${title}`}>
-        <Button className={classes.btn} variant="contained" color="primary">
-          <h4 style={{ color: "white" }}>Search</h4>
+      <NavLink to={`/search/${value.title}`}>
+        <Button
+          className={classes.btn}
+          variant="contained"
+          color="primary"
+          onClick={() => setValue}
+        >
+          Search
         </Button>
       </NavLink>
     </Box>

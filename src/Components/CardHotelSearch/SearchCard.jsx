@@ -77,6 +77,7 @@ const useStyles = makeStyles({
     width: "7.5rem",
     height: "3rem",
     borderRadius: "1.5rem",
+    fontWeight: "700",
     margin: "0.5rem 0",
     backgroundColor: "#156bc1",
   },
@@ -86,7 +87,7 @@ export function SearchCard({ data }) {
   const classes = useStyles();
 
   let ratingAttr = 0;
-  data.rating = Math.floor(Math.random() * 100) / 10;
+  // data.rating = Math.floor(Math.random() * 100) / 10;
   if (data.rating + 5 < 10) data.rating += 5;
   if (data.rating > 9.5) ratingAttr = "Excellant";
   else if (data.rating > 9) ratingAttr = "Super";
@@ -148,7 +149,7 @@ export function SearchCard({ data }) {
             </Box>
             <Box className={classes.priceBox}>
               <Typography variant="h5" bold>
-                <b>${data.price3}</b>
+                <b>Rs {data.price3}</b>
               </Typography>
               <Typography variant="subtitle2" className={classes.address}>
                 nightly price per room
@@ -159,13 +160,12 @@ export function SearchCard({ data }) {
               >
                 excluding taxes & fees
               </Typography>
-              <NavLink to={`hotel/${data.hotelId}`}>
+              <NavLink to={`/hotel/${data.hotelId}`}>
                 <Button
                   variant="contained"
                   color="primary"
                   className={classes.btn}
-                >
-                  <h4 style={{ color: "white" }}>Book Now</h4>
+                >Book Now
                 </Button>
               </NavLink>
               {data.freeCancellation && (

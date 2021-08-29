@@ -4,7 +4,6 @@ import {
   Select,
   Box,
   MenuItem,
-  InputLabel,
   FormControl,
   makeStyles,
   InputBase,
@@ -26,10 +25,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     flexDirection: "row",
     gap: "1rem",
-    alignItems: "baseline",
+    alignItems: "center",
     height: 40,
     margin: "1rem 0",
-    color: "blue",
+    // color: "blue",
   },
   margin: {
     // margin: theme.spacing(1),
@@ -37,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     color: "blue",
+    display: "flex",
+    alignItems: "center",
     "&:focus": {
       borderRadius: 4,
       borderColor: "#blue",
@@ -85,12 +86,12 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-export function Sorting() {
+export function Sorting({ name, setStarRatingSort, setRating, setPrice }) {
   const classes = useStyles();
   return (
     <>
       <Typography variant="h4" style={{ fontWeight: "700" }}>
-        Manilla, Spain
+        {name}
       </Typography>
       <Box className={classes.box}>
         <Typography variant="body1" style={{ fontWeight: "700" }}>
@@ -100,15 +101,17 @@ export function Sorting() {
           variant="outlined"
           style={{ height: "100%" }}
           className={classes.btn}
+          onClick={() => setStarRatingSort((prev) => !prev)}
         >
-          <p style={{ color: "blue" }}> Star Rating</p>
+          Star Rating
         </Button>
         <Button
           variant="outlined"
           style={{ height: "100%" }}
           className={classes.btn}
+          onClick={() => setRating((prev) => !prev)}
         >
-          <p style={{ color: "blue" }}> Guest Rating</p>
+          Guest Rating
         </Button>
         <FormControl className={classes.margin}>
           {/* <InputLabel id="demo-simple-select-filled-label">Price</InputLabel> */}
@@ -122,8 +125,12 @@ export function Sorting() {
             // onChange={handleChange}
           >
             <MenuItem value={0}>Price</MenuItem>
-            <MenuItem value={true}>Price (low to high)</MenuItem>
-            <MenuItem value={false}>Price (high to low)</MenuItem>
+            <MenuItem value={true} onClick={(e) => setPrice(true)}>
+              Price (low to high)
+            </MenuItem>
+            <MenuItem value={false} onClick={(e) => setPrice(false)}>
+              Price (high to low)
+            </MenuItem>
           </Select>
         </FormControl>
       </Box>

@@ -1,4 +1,3 @@
-import { Home } from "./Pages/Home/Home";
 import "./App.css";
 import { Routes } from "./Routes/Route";
 

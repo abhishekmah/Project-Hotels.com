@@ -10,12 +10,36 @@ import {
   Button,
   Slider,
   ButtonGroup,
+  makeStyles,
 } from "@material-ui/core";
 import { useState } from "react";
+import styled from "styled-components"
 
 function valuetext(value) {
   return `${value}`;
 }
+
+const useStyle = makeStyles({
+  text: {
+    variant: "body1",
+    fontWeight: "700",
+  },
+  list:{
+    margin: "0",
+    padding: "0"
+  }
+});
+
+const WrapperButton = styled.button`
+  width: 50px;
+  margin: 4px 8px 0 0;
+  padding: 4px;
+  background-color: white;
+  font-weight: 700;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  color: #156bc1;
+`;
 
 export function Filter() {
   const popularFilters = [
@@ -25,6 +49,8 @@ export function Filter() {
     { checked: false, value: "Kitchen" },
     { checked: false, value: "SPA" },
   ];
+
+  const classes = useStyle();
 
   const [state, setState] = useState(popularFilters);
 
@@ -43,23 +69,27 @@ export function Filter() {
     setGuestRating(newValue);
   };
 
-  const handleStarRating = (e) => {
-    
-  }
+  const handleStarRating = (e) => {};
 
   return (
     <Box style={{ width: "80%", display: "flex", flexDirection: "column" }}>
-      <Typography>Name contains</Typography>
+      <Typography className={classes.text} variant="body1">
+        Name contains
+      </Typography>
       <TextField placeholder="Property Name" variant="outlined" />
-      <Typography>Popular Filter</Typography>
+      <hr style={{ margin: "1rem 0" }} />
+      <Typography className={classes.text} variant="body1">
+        Popular Filter
+      </Typography>
       {popularFilters.map((item) => {
         return (
           <List>
             <ListItem
               key={item.value}
               role={undefined}
-              dense
+              // dense
               button
+              className={classes.list}
               onClick={(e) => handleValue(item)}
             >
               <ListItemIcon>
@@ -68,37 +98,60 @@ export function Filter() {
                   //   checked={item.checked}
                   tabIndex={-1}
                   disableRipple
+                  color="#3880ff"
                   //   inputProps={{ "aria-labelledby": labelId }}
                 />
               </ListItemIcon>
-              <ListItemText primary={`${item.value}`} />
+              
+              <ListItemText primary={`${item.value}`} className={classes.list}/>
             </ListItem>
           </List>
         );
       })}
-      <Typography>Nightly Price:</Typography>
-      <Typography>
+      <hr style={{ margin: "1rem 0" }} />
+
+      <Typography className={classes.text} variant="body1">
+        Nightly Price:
+      </Typography>
+      <Typography variant="body1">
         Rs{value[0]} - {value[1]}
       </Typography>
       <Slider
         value={value}
+        className={classes.slider}
         onChange={handleChange}
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
         max={200000}
         min={0}
       />
-      <Typography>Star Rating</Typography>
-      <Box style={{ display: "flex" }}>
-        <ButtonGroup size="small" aria-label="small outlined button group">
-          <Button style={{marginRight: "4px"}}  onClick={handleStarRating}>1</Button>
-          <Button style={{marginRight: "4px"}}  onClick={handleStarRating}>2</Button>
-          <Button style={{marginRight: "4px"}}  onClick={handleStarRating}>3</Button>
-          <Button style={{marginRight: "4px"}}  onClick={handleStarRating}>4</Button>
-          <Button onClick={handleStarRating}>5</Button>
-        </ButtonGroup>
+      <hr style={{ margin: "1rem 0" }} />
+
+      <Typography className={classes.text} variant="body1">
+        Star Rating
+      </Typography>
+      <Box style={{ display: "flex", width: "100%" }}>
+        <WrapperButton variant="outlined" onClick={handleStarRating}>
+          1
+        </WrapperButton>
+        <WrapperButton variant="outlined" onClick={handleStarRating}>
+          2
+        </WrapperButton>
+        <WrapperButton variant="outlined" onClick={handleStarRating}>
+          3
+        </WrapperButton>
+        <WrapperButton variant="outlined" onClick={handleStarRating}>
+          4
+        </WrapperButton>
+        <WrapperButton variant="outlined" onClick={handleStarRating}>
+          5
+        </WrapperButton>
       </Box>
-      <Typography>Guest Rating</Typography>
+
+      <hr style={{ margin: "1rem 0" }} />
+      <Typography className={classes.text} variant="body1">
+        Guest Rating
+      </Typography>
       <Slider
         value={guestRating}
         onChange={handleGuestRatingChange}
@@ -108,7 +161,11 @@ export function Filter() {
         max={10}
         min={0}
       />
-      <Typography>Free cancellation \& payment</Typography>
+      <hr style={{ margin: "1rem 0" }} />
+
+      <Typography className={classes.text} variant="body1">
+        Free cancellation & payment
+      </Typography>
       <List>
         <ListItem
           key="cancellation"

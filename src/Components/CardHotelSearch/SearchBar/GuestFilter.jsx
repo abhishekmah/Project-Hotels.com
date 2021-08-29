@@ -10,15 +10,16 @@ export function GuestFilter() {
     <Box style={{ userSelect: "none" }}>
       <TextField
         id="filled-multiline-flexible"
-        label="Multiline"
+        label="Guests"
         multiline
         maxRows={0}
+        margin="dense"
         value={value}
         // disabled={true}
         onClick={() => setShowRoomSelector(!showRoomSelector)}
-        variant="filled"
+        variant="outlined"
       />
-      {showRoomSelector && <SelectGuest setValue={setValue}/>}
+      {showRoomSelector && <SelectGuest setValue={setValue} />}
     </Box>
   );
 }

@@ -6,6 +6,12 @@ import { useState, useEffect } from "react";
 export function SearchResult() {
   const [title, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [showData, setShowData] = useState([]);
+
+  let query = "spain";
+  setShowData(() => {
+    title.filter((item) => item.name.includes(query));
+  });
 
   useEffect(() => {
     getData();
@@ -19,9 +25,10 @@ export function SearchResult() {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <Box>
-      {title.slice(10 * page, (page + 1) * 10).map((item) => (
+      {showData.slice(10 * page, (page + 1) * 10).map((item) => (
         <SearchCard key={item.hotelId} data={item} />
       ))}
       <Box>

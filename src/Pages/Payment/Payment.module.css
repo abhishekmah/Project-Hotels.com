@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    
+}
+.menu p{
+    margin: 0 1rem;
+    padding: 1.2rem 1.2rem;
+}
+.menu p:hover{
+    background-color: #d32f2f;
+    cursor: pointer;
+    color: white;
+}
+.left{
+    flex: 0.7;
+    margin: 0.5rem;
+}
+.Facility,.facility2{
+    display: flex;
+    margin: 0.8rem 0;
+}
+.Facility p {
+
+    margin: 0 0.4rem;
+ }
+ .facility2{
+     background-color: #eee;
+     border-radius: 0.2rem;
+     padding: 0.4rem 0.4rem;
+ }
+ .facility2 p{
+margin: 0 0.4rem;
+color: green !important;
+ }
+ .step3{
+     display: flex;
+     justify-content: space-between;
+ }
+ .step3RightBox{
+     padding: 1rem;
+     margin-top: 0.5rem;
+     border: 1px solid #ddd;
+     border-radius: 0.4rem;
+ }

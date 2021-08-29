@@ -84,7 +84,7 @@ export default function LastMinDeals(){
                 <br />
                 <div className={styles.countryCont}>
                     <h1 id={styles.h1}><span><IoEarthSharp style={{color: "rgb(29, 29, 253)"}}/></span> Select country</h1>
-
+              
                     <FormControl className={classes.formControl}>
                         <NativeSelect
                         className={classes.selectEmpty}
@@ -115,7 +115,8 @@ export default function LastMinDeals(){
                         </NativeSelect>
                     </FormControl>
                 </div>
-                
+                <br />
+                <br />
                 {hotel.map((data) => (
 
                   <div key={uuidv4()} className={styles.first}>

@@ -10,6 +10,7 @@ import {getData} from "../../Utils/localStorage";
 const Links = styled(Link)`
 text-decoration: none;
 color: inherit;
+font-size: 14px;
 `
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
                     <p>INR <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p>Help <span className={ styles.nav__arroeDropdown}><IoMdArrowDropdown/></span></p>
                     <p><FaRegCalendarAlt/> &nbsp; Your Bookings</p>
-                    <Links to="/signin"><p>{isAuth ? `${data[0].first} ${data[0].last}` : " Sign in"} </p></Links>
+                    <p><Links to="/signin">{isAuth ? `${data[0].first} ${data[0].last}` : " Sign in"} </Links></p>
             </div>
             </div>
             <div className={styles.nav__extrasLink}>

@@ -6,7 +6,7 @@ import { useParams } from "react-router";
 
 export function SearchResult({ setName, starRatingSort, rating, price }) {
   const [title, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [showData, setShowData] = useState([]);
 
   const { query } = useParams();
@@ -14,10 +14,6 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
   const id = query;
 
   setName(query);
-
-  console.log(starRatingSort);
-  console.log(rating);
-  console.log(price);
 
   useEffect(() => {
     getData();
@@ -33,15 +29,6 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
       .catch((err) => console.log(err));
   };
 
-  console.log(
-    title.filter(
-      (item) =>
-        item.address.countryName.includes(query) ||
-        item.address.city.includes(query) ||
-        item.address.city + ", " + item.address.countryName.includes(query)
-    )
-  );
-
   return (
     <Box>
       {title
@@ -55,12 +42,10 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
         .map((item) => {
           return item;
         })
-        .filter(
-          (item) =>
-            item.address.countryName === id ||
-            item.address.city === id ||
-            item.address.city + ", " + item.address.countryName === id
-        )
+        .filter((item) => {
+          let temp = item.address.city + ", " + item.address.countryName;
+          return temp.includes(query);
+        })
         .slice(10 * page, (page + 1) * 10)
         .map((item) => (
           <SearchCard key={item.hotelId} data={item} />

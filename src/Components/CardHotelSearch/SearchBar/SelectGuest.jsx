@@ -29,7 +29,7 @@ export default function SelectGuest({ setValue }) {
   };
 
   return (
-    <Box>
+    <>
       <Box>
         <Box>
           <Typography>Room 1</Typography>
@@ -57,6 +57,6 @@ export default function SelectGuest({ setValue }) {
       <hr />
       <Button onClick={handleAddRoom}>ADD A ROOM</Button>
       <hr />
-    </Box>
+    </>
   );
 }

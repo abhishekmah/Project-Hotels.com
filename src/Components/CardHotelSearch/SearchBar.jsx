@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     gap: "1rem",
     margin: "1rem auto",
     height: "20p",
+    position: "relative",
     justifyItems: "space-between",
     alignItems: "baseline",
   },
@@ -47,24 +48,26 @@ export default function SearchBar() {
   const [value, setValue] = useState({ title: "Spain" });
   // const [checkIn, setCheckIn] = useState();
 
-  
-
   const handleOnChange = (e) => {
-    setValue(e.target.value);
-    console.log(e.target.value);
-  }
+    setValue(e);
+    console.log(e);
+  };
+
+  // const handleOnClick = () => {
+  //   setValue(e.target.value)
+  // }
 
   return (
     <Box className={classes.root}>
       <CitySearchBox classes={classes} handleOnChange={handleOnChange} />
       <CheckInOut classes={classes} />
       <GuestFilter />
-      <NavLink to={`/search/${value.title}`}>
+      <NavLink to={`/search/${value}`}>
         <Button
           className={classes.btn}
           variant="contained"
           color="primary"
-          onClick={() => setValue}
+          // onClick={() => handleOnClick()}
         >
           Search
         </Button>

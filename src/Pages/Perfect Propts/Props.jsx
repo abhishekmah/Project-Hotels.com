@@ -8,10 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 import {Link} from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Footer } from "../../Components/Footer/Footer";
-import { CovidAd } from "../../Components/CovidAd/CovidAd";
-import { Navbar } from "../../Components/Navbar/Navbar";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
+import { Link } from "react-router-dom";
 // import GoogleMap from '../../Map//GoogleMap';
 
 export default function Propts() {
@@ -41,9 +39,7 @@ export default function Propts() {
 
   return (
     <div className="body">
-      <CovidAd />
       <HRLine />
-      <Navbar />
       <div className="section1">
         <div className="hotelBrief">
           <div className="hotelName">
@@ -74,9 +70,9 @@ export default function Propts() {
             <a href="/">per night</a> <br />
             <span>*including taxes & fees</span>
             <h4>
-              <button className="book">
+              <Link to="/payment" ><button className="book">
                 RESERVE ROOM
-              </button>
+              </button></Link>
             </h4>
           </div>
         </div>
@@ -822,7 +818,6 @@ export default function Propts() {
         </section>
       </section>
       
-      <Footer/>
     </div>
   );
 }

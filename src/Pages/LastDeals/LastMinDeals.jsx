@@ -8,6 +8,7 @@ import { IoEarthSharp } from "react-icons/io5";
 import Carousel from 'react-elastic-carousel';
 import CardDeal from "../../Components/CardDeal/CardDeal";
 import {Footer} from "../../Components/Footer/FooterDealsPage/FooterDeals";
+import {Link} from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
@@ -59,7 +60,7 @@ export default function LastMinDeals(){
 
     return (
         <div >
-          <Navbar/>
+          {/* <Navbar/> */}
             <div className={styles.imgDiv}>
               <br />
              <h1>Last Minute Deals</h1>
@@ -67,7 +68,7 @@ export default function LastMinDeals(){
              <br />
              <div className={styles.date}>
               <h1><BiSearchAlt id={styles.icon}/> Find a place to stay</h1>
-              <CitySearchBox/>
+              {/* <CitySearchBox/> */}
               <p>Enter a destination or property</p>
               <hr style={{width: "107%", marginLeft: -17, color: "white"}}/>
              </div>
@@ -95,7 +96,7 @@ export default function LastMinDeals(){
                         inputProps={{ 'aria-label': 'country' }}
                         >
                         <option value="Show all">Show all</option>
-                        <option value=" Australia">Australia</option>
+                        <option value=" Australia">California</option>
                         <option value=" Austria">Austria</option>
                         <option value="China ">China</option>
                         <option value="Czech">Czech Republic</option>
@@ -142,7 +143,7 @@ export default function LastMinDeals(){
                           <h1 style={{color: "#d32f2f",fontSize: 20}}>Save up to 15% </h1>
                           <p style={{fontSize: 14, fontWeight: 500,color: "#d32f2f", marginTop: "-5px"}}>Travel between Sun 31 May 2020 - Thu 30 December 2021</p>
                           <hr  style={{backgroundColor: "#d32f2f",marginTop: 6,border: "none",height: 1,marginBottom: 5}}/>
-                          <button>Check Price</button>
+                          <button><Link to={`/hotel/${data.hotelId}`}>Check Price</Link></button>
                           </CardDeal>
                         ))}
                     

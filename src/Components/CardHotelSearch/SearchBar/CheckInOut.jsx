@@ -10,17 +10,17 @@ import styled from "styled-components";
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 100,
+    width: 130,
   },
 }));
 
 const WrapperTextField = styled(TextField)`
-  width: 200px;
+  width: 150px;
 `;
 
 export function CheckInOut({ classes, setNight }) {

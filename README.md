@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Project:- Clone of hotels.com
+##### Hotels.com is a leading provider of hotel accommodation worldwide, offering booking services through its own network of localized websites.Hotels.com gives travelers one of the widest selections of accommodation on the net, including both independent and major chain hotels as well as self-catering in over hundreds of thousands of properties worldwide. The company offers a one-stop shopping source for hotel pricing, amenities, and availability.
+We were able to achieve axact UI of the website, with all these major functionalities within 5-6 days.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### - [Visit Site](https://hotelsclone.netlify.app/)
 
-## Available Scripts
+### Screenshots
+#### Landing page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/landing%20page.png)
+#### SignUp page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/signup.png)
+#### SignIn page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/signin.png)
+#### Search Results page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/searchResults.png)
+#### Hotel page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/hotelDetailsPage.png)
+#### Payments page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/paymentsPage.png)
+#### Deals page-
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/dealsPage.png)
+
+### Team members:-
+#### Abhishek Kumar [View GitHub profile](https://github.com/abhishekmah)
+#### Debasish Ransingh [View GitHub profile](https://github.com/Ransingh88)
+#### Rohit Gupta  [View GitHub profile](https://github.com/rohitkumar0427)
+#### Nitish Verma [View GitHub profile](https://github.com/nitishVrma)
+
+### Pages Designed:
+Landing page, SignUp page, SignIn page, Hotel search page, Hotel details page, Map page, Payment page, Latest deals page.
+
+### Tech Stack : 
+React Js, JavaScript, HTML, CSS.
+ 
+ ### Libraries used : 
+ JSON-server, Material UI, React Icons, Axios, Styled-components, google-maps-react, react-router, react-router-dom, redux, UUID, react-responsive-carousel.
+## How to run this project
 
 In the project directory, you can run:
 
-### `npm start`
+#1. install node modules `npm i`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#2. install json-server `npm install -g json-server`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#3. start json-server on port 3001
 
-### `npm test`
+#3(a). split the terminal `ctrl+shift+5`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#3(b). start json-server `json-server --watch db.json --port 3001`
 
-### `npm run build`
+#4. start react app `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#5.Most importantly install all the dependencies.

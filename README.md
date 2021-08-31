@@ -21,7 +21,7 @@ We were able to achieve axact UI of the website, with all these major functional
 ![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/dealsPage.png)
 
 ### Team members:-
-#### Abhishek Kumar [View GitHub profile](https://github.com/abhishekmah)
+#### Abhishek Mahato [View GitHub profile](https://github.com/abhishekmah)
 #### Debasish Ransingh [View GitHub profile](https://github.com/Ransingh88)
 #### Rohit Gupta  [View GitHub profile](https://github.com/rohitkumar0427)
 #### Nitish Verma [View GitHub profile](https://github.com/nitishVrma)

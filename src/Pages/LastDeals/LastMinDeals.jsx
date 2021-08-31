@@ -51,13 +51,20 @@ export default function LastMinDeals(){
 }
 
   const handleChange = (event) => {
-    const name = event.target.name;
+    const name = event.target.value;
     setState({
       ...state,
       [name]: event.target.value,
+      
     });
+    console.log(name);
+    axios.get(`http://localhost:3001/data/address?countryName=${name}`)
+    .then((res) => {
+        console.log(res.data);
+        setHotel(res.data);
+    })
   };
-
+  
     return (
         <div >
           {/* <Navbar/> */}

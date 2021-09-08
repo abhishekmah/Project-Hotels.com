@@ -22,7 +22,7 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
 
   const getData = () => {
     axios
-      .get("http://localhost:3001/data")
+      .get("https://abhi-app-test.herokuapp.com/data")
       .then(({ data }) => {
         setData(data);
       })

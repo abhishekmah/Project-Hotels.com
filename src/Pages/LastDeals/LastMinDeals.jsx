@@ -79,7 +79,7 @@ export default function LastMinDeals(){
   }, [])
 
   const getData = () => {
-    axios.get("http://localhost:3001/data/")
+    axios.get("https://abhi-app-test.herokuapp.com/data")
     .then((res) => {
         console.log(res.data);
         setHotel(res.data);

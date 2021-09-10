@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   },
   imageBox: {
     width: "30%",
+    marginRight: "1rem",
     borderRadius: "16px",
   },
   priceBox: {
@@ -165,7 +166,8 @@ export function SearchCard({ data }) {
                   variant="contained"
                   color="primary"
                   className={classes.btn}
-                >Book Now
+                >
+                  Book Now
                 </Button>
               </NavLink>
               {data.freeCancellation && (

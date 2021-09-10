@@ -1,5 +1,5 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import classes from "./Amenities.module.css"
+// import classes from "./Amenities.module.css"
 
 
 const useStyles = makeStyles({
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 });
 
 export function Amenities({ amenities }) {
-  // const classes = useStyles();
+  const classes = useStyles();
   return (
     <>
       {amenities.slice(1,5).map((item) => {

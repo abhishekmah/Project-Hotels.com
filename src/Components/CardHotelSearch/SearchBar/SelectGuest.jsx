@@ -1,8 +1,20 @@
-import { Box, TextField, Typography, Button } from "@material-ui/core";
+import { TextField, Typography, Grid, makeStyles } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+
 import { useEffect, useState } from "react";
+
+const useStyles = makeStyles({
+  textColor: {
+    // color: "#080808",
+    fontSize: "1rem",
+  },
+});
 
 export default function SelectGuest({ setValue }) {
   const init = [];
+  const classes = useStyles();
 
   const [rooms, setRooms] = useState(init);
   const [adults, setAdults] = useState(1);
@@ -30,33 +42,67 @@ export default function SelectGuest({ setValue }) {
 
   return (
     <>
-      <Box>
-        <Box>
-          <Typography>Room 1</Typography>
-        </Box>
-        <Box>
-          <Typography>Adults</Typography>
-          <Box>
-            <Button
-              onClick={() => setAdults((prev) => prev - 1)}
-              disabled={adults < 2}
-            >
-              -
-            </Button>
-            <TextField value={adults} />
-            <Button
-              onClick={() => setAdults((prev) => prev + 1)}
-              disabled={adults >= 4}
-            >
-              +
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-      ;
-      <hr />
+      <Grid container alignItems="baseline">
+        <Grid item md={12} xs={12} sm={12} ls={12} xl={12}>
+          <Typography variant="h6">
+            <b>Room 1</b>
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          container
+          md={12}
+          xs={12}
+          sm={12}
+          ls={12}
+          xl={12}
+          alignItems="baseline"
+        >
+          <Grid item md={4}>
+            <Typography variant="h6" className={classes.textColor}>
+              Adults
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            container
+            md={8}
+            justifyContent="space-around"
+            alignItems="baseline"
+          >
+            <Grid item md={4}>
+              <IconButton
+                color="primary"
+                onClick={() => setAdults((prev) => prev - 1)}
+                disabled={adults < 2}
+              >
+                <RemoveIcon />
+              </IconButton>
+            </Grid>
+            <Grid item md={1}>
+              <TextField
+                value={adults}
+                InputProps={{
+                  disableUnderline: true,
+                }}
+              />
+            </Grid>
+            <Grid item md={4}>
+              {" "}
+              <IconButton
+                color="primary"
+                onClick={() => setAdults((prev) => prev + 1)}
+                disabled={adults > 4}
+              >
+                <AddIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      {/* <hr />
       <Button onClick={handleAddRoom}>ADD A ROOM</Button>
-      <hr />
+      <hr /> */}
     </>
   );
 }

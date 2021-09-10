@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Autocomplete, {
-} from "@material-ui/lab/Autocomplete";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
+import { InputAdornment } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
 
 const cities = [
   { title: "Spain" },
@@ -66,7 +67,6 @@ const cities = [
 ];
 
 export function CitySearchBox({ classes, handleOnChange }) {
-
   const [value, setValue] = useState(cities[0]);
   const [inputValue, setInputValue] = useState("");
 
@@ -83,12 +83,12 @@ export function CitySearchBox({ classes, handleOnChange }) {
       id="combo-box-demo"
       options={cities}
       getOptionLabel={(option) => option.title}
-      style={{ width: 300 }}
       renderInput={(params) => (
         <TextField
           {...params}
           label="e.g Spain"
-          variant="filled"
+          // variant="filled"
+          className={classes.searchBox}
           onChange={() => handleOnChange(inputValue)}
         />
       )}

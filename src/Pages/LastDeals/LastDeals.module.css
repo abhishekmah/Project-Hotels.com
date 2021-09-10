@@ -15,7 +15,7 @@
 .date{
 margin-left: 200px;
 width: 30%;
-height: 160px;
+height: 200px;
 padding: 18px;
 background-color: rgb(240, 235, 235);
 /* border: 1px solid grey; */
@@ -35,8 +35,19 @@ box-shadow: 5px 5px 25px grey;
     color: rgb(36, 35, 35);
     margin-bottom: 10px;
 }
-.date>input{
+.date>form>input{
     width: 100%;
+    margin-bottom: 5px;
+}
+.date>button{
+    width: 32%;
+    height: 45px;
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
     margin-bottom: 5px;
 }
 #icon{
@@ -93,6 +104,7 @@ box-shadow: 5px 5px 25px grey;
 }
 #h1{
     color: rgb(29, 29, 253);
+    margin-right: 30px;
 }
 #h1>span{
     color: rgb(29, 29, 253);

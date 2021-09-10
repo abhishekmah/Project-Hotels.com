@@ -8,10 +8,10 @@ import { IoEarthSharp } from "react-icons/io5";
 import Carousel from 'react-elastic-carousel';
 import CardDeal from "../../Components/CardDeal/CardDeal";
 import {Footer} from "../../Components/Footer/FooterDealsPage/FooterDeals";
+import {Link} from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
+import TextField from '@material-ui/core/TextField';
 import { Navbar } from "../../Components/NavbarLastDeals/NavbarLastDeals";
 import { CitySearchBox } from '../../Components/CardHotelSearch/SearchBar/CitySearchBox';
 
@@ -27,13 +27,50 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+  const currencies = [
+    {
+      value: 'Show All',
+    },
+    {
+      value: 'United Kingdom',
+    },
+    {
+      value: 'Sint Maarten',
+    },
+    {
+      value: 'Spain',
+    },
+    {
+      value: 'Italy',
+    },
+    {
+      value: 'Greece',
+    },
+    {
+      value: 'Morocco',
+    },
+    {
+      value: 'Germany',
+    },
+    {
+      value: 'Austria',
+    },
+    {
+      value: 'Netherlands',
+    },
+    {
+      value: 'Argentina',
+    },
+    {
+      value: 'France',
+    },
+  ];
 export default function LastMinDeals(){
     
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    country: '',
-    name: 'hai',
-  });
+  const [nameData, setNameData] = React.useState([]);
+  const [country, setCountry] = React.useState("Show all");
+  const [cont, setCont] = React.useState("");
   const [hotel, setHotel] = React.useState([]);
 
   React.useEffect(() => {
@@ -42,24 +79,31 @@ export default function LastMinDeals(){
   }, [])
 
   const getData = () => {
-    axios.get("http://localhost:3001/data/?_limit=29")
+    axios.get("https://abhi-app-test.herokuapp.com/data")
     .then((res) => {
         console.log(res.data);
         setHotel(res.data);
+        setNameData(res.data);
     })
 }
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
+    setCountry(event.target.value);
+  };
+  const handleChange1 = () => {
+    setCountry(cont);
   };
 
+  React.useEffect(() => {
+    setNameData(hotel.filter((item)=> item.address.countryName === country));
+  }, [country])
+
+  // console.log(country);
+  console.log(cont);
+  
     return (
         <div >
-          <Navbar/>
+          {/* <Navbar/> */}
             <div className={styles.imgDiv}>
               <br />
              <h1>Last Minute Deals</h1>
@@ -67,9 +111,12 @@ export default function LastMinDeals(){
              <br />
              <div className={styles.date}>
               <h1><BiSearchAlt id={styles.icon}/> Find a place to stay</h1>
-              <CitySearchBox/>
+              <form >
+              <input type="text" value={cont} onChange={(e) => setCont(e.target.value)}/>
+              </form>
               <p>Enter a destination or property</p>
               <hr style={{width: "107%", marginLeft: -17, color: "white"}}/>
+              <button onClick={handleChange1}>Show Deals</button>
              </div>
              <br />
             </div>
@@ -84,46 +131,33 @@ export default function LastMinDeals(){
                 </div>
                 <br />
                 <div className={styles.countryCont}>
-                    <h1 id={styles.h1}><span><IoEarthSharp style={{color: "rgb(29, 29, 253)"}}/></span> Select country</h1>
+                    <h1 id={styles.h1}><span><IoEarthSharp style={{color: "rgb(29, 29, 253)", marginBottom: -4}}/></span> Select country</h1>
               
-                    <FormControl className={classes.formControl}>
-                        <NativeSelect
-                        className={classes.selectEmpty}
-                        value={state.country}
-                        name="country"
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'country' }}
-                        >
-                        <option value="Show all">Show all</option>
-                        <option value=" Australia">Australia</option>
-                        <option value=" Austria">Austria</option>
-                        <option value="China ">China</option>
-                        <option value="Czech">Czech Republic</option>
-                        <option value=" France">France</option>
-                        <option value=" Germany">Germany</option>
-                        <option value="India ">India</option>
-                        <option value=" Indonesia">Indonesia</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="SKorea">South Korea</option>
-                        <option value="Taiwan">Taiwan</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="USA">United States of America</option>
-                        <option value="Vietnam">Vietnam</option>
-                        </NativeSelect>
-                    </FormControl>
+                    <TextField
+                      id="standard-select-currency-native"
+                      select
+                      value={country}
+                      onChange={handleChange}
+                      SelectProps={{
+                      native: true,
+                      }}
+                    >
+                      {currencies.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.value}
+                        </option>
+                      ))}
+                    </TextField>
+
                 </div>
                 <br />
                 <br />
-                {hotel.map((data) => (
+                {nameData.map((data) => (
 
                   <div key={uuidv4()} className={styles.first}>
                       <div className={styles.dataMain}>
                                   
-                      <p>Los Angeles, California <span style={{fontSize: 18, marginLeft: 5, color: "rgb(72, 72, 253)", fontWeight: 600}}>view all deals</span></p>
+                      <p>{data.address.city}, {data.address.countryName}<Link to={`/hotel/${data.hotelId}`}><span style={{fontSize: 18, marginLeft: 15, color: "rgb(72, 72, 253)", fontWeight: 600}}>view all deals</span></Link></p>
                                   
                       <div className={styles.data}>
                         <div>
@@ -142,7 +176,7 @@ export default function LastMinDeals(){
                           <h1 style={{color: "#d32f2f",fontSize: 20}}>Save up to 15% </h1>
                           <p style={{fontSize: 14, fontWeight: 500,color: "#d32f2f", marginTop: "-5px"}}>Travel between Sun 31 May 2020 - Thu 30 December 2021</p>
                           <hr  style={{backgroundColor: "#d32f2f",marginTop: 6,border: "none",height: 1,marginBottom: 5}}/>
-                          <button>Check Price</button>
+                          <button><Link to={`/hotel/${data.hotelId}`}><span style={{color: "blue", fontSize: 15}}>Check Price</span></Link></button>
                           </CardDeal>
                         ))}
                     
@@ -161,7 +195,7 @@ export default function LastMinDeals(){
                     <h1>3-star <span style={{fontWeight: 400, color: "white"}}>average</span></h1>
                     <h2 style={{marginTop: "-15px"}}>$ {data.price3}</h2>
                     <br />
-                    <button>View all deals</button>
+                    <button ><Link to={`/hotel/${data.hotelId}`}><span style={{color: "white", fontSize: 15}}>View all deals</span></Link></button>
                   </div>
                   </div>
                   
@@ -171,7 +205,7 @@ export default function LastMinDeals(){
 
             </div>
             <div className={styles.dataDiv1}>
-            <Footer />
+            {/* <Footer /> */}
             </div>
            
         </div>

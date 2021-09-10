@@ -60,11 +60,14 @@ const Signin = ({handleLogin}) => {
             email,
             password,
         }
-        handleLogin(payload);
+        if(email!="" && password!="")
+        {
+            handleLogin(payload);
+        }  
     }
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <HRLine color="#d32f2f"/>
             <Container>
                 <Form>

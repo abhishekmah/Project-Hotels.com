@@ -10,7 +10,7 @@ import styled from "styled-components";
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
   },
   textField: {
     width: 130,
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const WrapperTextField = styled(TextField)`
-  width: 200px;
+  width: 150px;
 `;
 
 export function CheckInOut({ classes, setNight }) {

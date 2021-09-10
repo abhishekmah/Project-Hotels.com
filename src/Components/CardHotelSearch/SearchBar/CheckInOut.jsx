@@ -13,9 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 100,
+    width: 130,
   },
 }));
 
@@ -24,20 +22,7 @@ const WrapperTextField = styled(TextField)`
 `;
 
 export function CheckInOut({ classes, setNight }) {
-  const xx = useStyles();
-  // let checkin = 0;
-  // let checkout = 0;
-  // const handleCheckIn = (e) => {
-  //   checkin = e.target.value;
-  // };
-  // const handleCheckOut = (e) => {
-  //   checkout = e.target.value;
-  // };
-
-  // let diff_in_time = Number(checkout.slice(7)) - Number(checkin.slice(7));
-  // let diff_in_days = 4;
-
-  // console.log(diff_in_days);
+  const classs = useStyles();
 
   return (
     <form noValidate>
@@ -47,7 +32,7 @@ export function CheckInOut({ classes, setNight }) {
         variant="filled"
         type="date"
         defaultValue="2021-08-29"
-        className={xx.textField}
+        className={classs.textField}
         InputLabelProps={{
           shrink: true,
         }}
@@ -58,7 +43,7 @@ export function CheckInOut({ classes, setNight }) {
         variant="filled"
         type="date"
         defaultValue="2021-08-31"
-        className={xx.textField}
+        className={classs.textField}
         InputLabelProps={{
           shrink: true,
         }}

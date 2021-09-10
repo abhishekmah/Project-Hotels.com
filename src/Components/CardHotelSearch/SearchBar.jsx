@@ -8,10 +8,10 @@ import { NavLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
   },
   textField: {
-    width: 220,
+    width: 100,
     height: 20,
     backgroundColor: "white",
     size: "small",

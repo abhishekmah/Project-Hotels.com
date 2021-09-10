@@ -37,7 +37,6 @@ export function SearchResultPage() {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>
-        <hr style={{ width: "100%" }} />
         <SearchBar className={classes.searchBar} />
         <hr style={{ width: "100%" }} />
       </Grid>

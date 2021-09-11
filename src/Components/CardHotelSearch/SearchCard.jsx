@@ -35,7 +35,6 @@ const useStyles = makeStyles({
     minWidth: "280px",
     maxHeight: "200px",
     minHeight: "200px",
-    // objectFit: "contain",
     alignContent: "top",
   },
   excuding: {
@@ -88,7 +87,6 @@ export function SearchCard({ data }) {
   const classes = useStyles();
 
   let ratingAttr = 0;
-  // data.rating = Math.floor(Math.random() * 100) / 10;
   if (data.rating + 5 < 10) data.rating += 5;
   if (data.rating > 9.5) ratingAttr = "Excellant";
   else if (data.rating > 9) ratingAttr = "Super";

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 const useStyles = makeStyles({
   textColor: {
-    // color: "#080808",
     fontSize: "1rem",
   },
 });

@@ -63,15 +63,11 @@ export default function SearchBar() {
     setValue(e);
   };
 
-  // const handleOnClick = () => {
-  //   setValue(e.target.value)
-  // }
-
   return (
     <Grid
       container
       justifyContent="space-between"
-      spacing={1}
+      spacing={2}
       className={classes.container}
     >
       <Grid item md={4}>
@@ -91,33 +87,5 @@ export default function SearchBar() {
         </NavLink>
       </Grid>
     </Grid>
-
-    // <Grid
-    //   container
-    //   // className={classes.root}
-    //   justifyContent="space-between"
-    //   spacing={1}
-    // >
-    //   <Grid item xs={3} sm={3} md={3} ls={3} xl={3}>
-    //     <CitySearchBox classes={classes} handleOnChange={handleOnChange} />
-    //   </Grid>
-    //   <Grid item xs={3} sm={3} md={3} ls={3} xl={3}>
-    //     <CheckInOut classes={classes} />
-    //   </Grid>
-    //   <Grid item xs={3} sm={3} md={3} ls={3} xl={3}>
-    //     <GuestFilter />
-    //   </Grid>
-    //   <Grid item xs={3} sm={3} md={3} ls={3} xl={3}>
-    //     <NavLink to={`/search/${value}`}>
-    //       <Button
-    //         className={classes.btn}
-    //         variant="contained"
-    //         color="primary"
-    //       >
-    //         Search
-    //       </Button>
-    //     </NavLink>
-    //   </Grid>
-    // </Grid>
   );
 }

@@ -81,7 +81,7 @@ export default function Propts() {
       <br />
       <div className="section2">
         <div id="carousel">
-          <Carousel showArrows={true}>
+          <Carousel>
             {hotel.images.map((e) => {
               return (
                 <div key = {uuidv4()}>

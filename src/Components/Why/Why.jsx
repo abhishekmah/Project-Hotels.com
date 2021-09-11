@@ -13,7 +13,14 @@ margin: 1rem;
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
+
+    
 }
+@media only screen and (max-width:799px){
+        .CardContent,.content{
+            flex-direction: column;
+        }
+    }
 
 
 .icon{

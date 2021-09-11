@@ -2,13 +2,13 @@ import React from "react";
 import {Link} from "react-router-dom";
 import { CardLG } from "../../Components/CardLG/CardLG";
 import { CardSM } from "../../Components/CardSM/CardSM";
-import { CovidAd } from "../../Components/CovidAd/CovidAd";
+// import { CovidAd } from "../../Components/CovidAd/CovidAd";
 import { HRLine } from "../../Components/HorizontalLine/HRLine";
-import { Navbar } from "../../Components/Navbar/Navbar";
+// import { Navbar } from "../../Components/Navbar/Navbar";
 import {TravelWithConfidence} from '../../Components/TravelWithConfidence/TravelWithConfidence'
 
 import styles from "./Home.module.css";
-import { Footer } from "../../Components/Footer/Footer";
+// import { Footer } from "../../Components/Footer/Footer";
 import { CardWide } from "../../Components/CardWide/CardWide";
 import Carousel from 'react-elastic-carousel'
 // import Slider from "react-slick";

@@ -85,7 +85,7 @@ export default function Propts() {
             {hotel.images.map((e) => {
               return (
                 <div key = {uuidv4()}>
-                  <img src={e.url} alt="" />
+                  <img id="imageHeight" src={e.url} alt="" />
                 </div>
               );
             })}
@@ -177,9 +177,9 @@ export default function Propts() {
             <span className="is-visually-hidden">map</span>
             <div className="_1FepWS">
             <Link to="/hotels/map">
-              <span class="_1Ac6YH _2NVtuq _1DW1ZH ZCedaV">
+              <span className="_1Ac6YH _2NVtuq _1DW1ZH ZCedaV">
                 <img
-                  class="_3vohxN _2kg-Bh"
+                  className="_3vohxN _2kg-Bh"
                   src="https://foodbank.bc.ca/wp-content/uploads/2016/04/Google-Map-of-Locations.png"
                   alt=""
                 />

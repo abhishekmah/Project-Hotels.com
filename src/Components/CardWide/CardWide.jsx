@@ -5,7 +5,7 @@ const Card = styled.div`
 margin: 0.8rem 0.25rem 0.6rem 0.25rem;
 padding: 0.25rem;
 img{
-    width: 350px;
+    width: 340px;
     border-radius: 0.4rem;
 }
 p{

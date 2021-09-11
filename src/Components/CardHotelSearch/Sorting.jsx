@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     color: "blue",
     display: "flex",
     alignItems: "center",
+    fontWeight: "400",
+    height: "100%",
+    border: "1px solid #D3D3D3",
     "&:focus": {
       borderRadius: 4,
       borderColor: "#blue",
@@ -90,16 +93,15 @@ export function Sorting({ name, setStarRatingSort, setRating, setPrice }) {
   const classes = useStyles();
   return (
     <>
-      <Typography variant="h4" style={{ fontWeight: "700" }}>
+      <Typography variant="h4">
         {name}
       </Typography>
       <Box className={classes.box}>
-        <Typography variant="body1" style={{ fontWeight: "700" }}>
+        <Typography variant="body1">
           Sort By
         </Typography>
         <Button
           variant="outlined"
-          style={{ height: "100%" }}
           className={classes.btn}
           onClick={() => setStarRatingSort((prev) => !prev)}
         >
@@ -107,7 +109,6 @@ export function Sorting({ name, setStarRatingSort, setRating, setPrice }) {
         </Button>
         <Button
           variant="outlined"
-          style={{ height: "100%" }}
           className={classes.btn}
           onClick={() => setRating((prev) => !prev)}
         >
@@ -116,15 +117,15 @@ export function Sorting({ name, setStarRatingSort, setRating, setPrice }) {
         <FormControl className={classes.margin}>
           {/* <InputLabel id="demo-simple-select-filled-label">Price</InputLabel> */}
           <Select
-            labelId="demo-simple-select-filled-label"
-            id="demo-simple-select-filled"
+            // labelId="demo-simple-select-filled-label"
+            // id="demo-simple-select-filled"
             input={<BootstrapInput />}
             defaultValue={0}
             // native
             // value={age}
             // onChange={handleChange}
           >
-            <MenuItem value={0}>Price</MenuItem>
+            <MenuItem value={0}>PRICE</MenuItem>
             <MenuItem value={true} onClick={(e) => setPrice(true)}>
               Price (low to high)
             </MenuItem>

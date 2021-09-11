@@ -1,4 +1,4 @@
-import { makeStyles, Box, Button } from "@material-ui/core";
+import { makeStyles, Button, Grid, TextField } from "@material-ui/core";
 import { GuestFilter } from "./SearchBar/GuestFilter";
 import { CheckInOut } from "./SearchBar/CheckInOut";
 import { CitySearchBox } from "./SearchBar/CitySearchBox";
@@ -8,35 +8,46 @@ import { NavLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
+    margin: "1rem auto",
   },
-  textField: {
-    width: 220,
-    height: 20,
-    backgroundColor: "white",
-    size: "small",
+  checkInOut: {
+    border: "1px solid lightgray",
+    backgroundColor: "#F6F4F3",
+    borderRadius: "0px",
+    cursor: "pointer",
+    fontSize: "17px",
+    padding: "0px",
+    "&$focused": {
+      border: "1px solid #156BC1",
+    },
   },
-  textFieldCheckin: {
-    height: "70px",
-    backgroundColor: "white",
+  checkInOutFocused: {
+    border: "1px solid #156BC1",
+  },
+  noHover: {
+    PointerEvent: "none",
+  },
+  guestfilter: {
+    height: "100%",
+    border: "1px solid lightgray",
+    backgroundColor: "#F6F4F3",
   },
   root: {
-    display: "flex",
-    width: "95%",
-    gap: "1rem",
-    margin: "1rem auto",
-    height: "20p",
-    position: "relative",
-    justifyItems: "space-between",
-    alignItems: "baseline",
+    "label + &": {
+      color: "red",
+    },
+  },
+  searchBox: {
+    border: "1px solid lightgray",
+    backgroundColor: "#F6F4F3",
   },
   btn: {
     color: "white",
     borderRadius: "1.75rem",
-    height: "2.5rem",
-    width: "10rem",
-    marginTop: "1rem",
-    alignSelf: "baseline",
+    padding: "0.5rem 2rem",
+    height: "100%",
+    width: "100%",
     fontWeight: "700",
   },
 }));
@@ -45,33 +56,36 @@ export default function SearchBar() {
   const classes = useStyles();
 
   const [formData, setFormData] = useState();
-  const [value, setValue] = useState({ title: "Spain" });
-  // const [checkIn, setCheckIn] = useState();
+  const [value, setValue] = useState({ title: "" });
+  const [checkIn, setCheckIn] = useState();
 
   const handleOnChange = (e) => {
     setValue(e);
-    console.log(e);
   };
 
-  // const handleOnClick = () => {
-  //   setValue(e.target.value)
-  // }
-
   return (
-    <Box className={classes.root}>
-      <CitySearchBox classes={classes} handleOnChange={handleOnChange} />
-      <CheckInOut classes={classes} />
-      <GuestFilter />
-      <NavLink to={`/search/${value}`}>
-        <Button
-          className={classes.btn}
-          variant="contained"
-          color="primary"
-          // onClick={() => handleOnClick()}
-        >
-          Search
-        </Button>
-      </NavLink>
-    </Box>
+    <Grid
+      container
+      justifyContent="space-between"
+      spacing={2}
+      className={classes.container}
+    >
+      <Grid item md={4}>
+        <CitySearchBox classes={classes} handleOnChange={handleOnChange} />
+      </Grid>
+      <Grid item container md={4} className={classes.noHover}>
+        <CheckInOut classes={classes} handleOnChange={handleOnChange} />
+      </Grid>
+      <Grid item md={2}>
+        <GuestFilter classes={classes} handleOnChange={handleOnChange} />
+      </Grid>
+      <Grid item md={2}>
+        <NavLink to={`/search/${value}`}>
+          <Button className={classes.btn} variant="contained" color="primary">
+            Search
+          </Button>
+        </NavLink>
+      </Grid>
+    </Grid>
   );
 }

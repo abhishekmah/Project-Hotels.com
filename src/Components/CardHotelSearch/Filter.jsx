@@ -23,6 +23,17 @@ const useStyle = makeStyles({
   text: {
     fontWeight: "700",
   },
+  hr: {
+    margin: "1rem 0",
+  },
+  box: {
+    width: "80%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  checkbox:{
+    width:"20%"
+  }
 });
 
 const WrapperButton = styled.button`
@@ -67,12 +78,12 @@ export function Filter() {
   const handleStarRating = (e) => {};
 
   return (
-    <Box style={{ width: "80%", display: "flex", flexDirection: "column" }}>
+    <Box className={classes.box}>
       <Typography className={classes.text} variant="body1">
         Name contains
       </Typography>
       <TextField placeholder="Property Name" variant="outlined" />
-      <hr style={{ margin: "1rem 0" }} />
+      <hr className={classes.hr} />
       <Box>
         <Typography className={classes.text} variant="body1">
           Popular Filter
@@ -85,11 +96,10 @@ export function Filter() {
                 role={undefined}
                 dense
                 button
-                // onClick={(e) => {}}
               >
                 <ListItemIcon>
                   <Checkbox
-                    style={{ width: "20px" }}
+                    className={classes.checkbox}
                     edge="start"
                     color="primary"
                     disableRipple
@@ -101,7 +111,7 @@ export function Filter() {
           })}
         </List>
       </Box>
-      <hr style={{ margin: "1rem 0" }} />
+      <hr className={classes.hr} />
 
       <Box>
         <Typography className={classes.text} variant="body1">
@@ -112,15 +122,13 @@ export function Filter() {
         </Typography>
         <Slider
           value={value}
-          // className={classes.slider}
           onChange={handleChange}
           valueLabelDisplay="auto"
-          // aria-labelledby="range-slider"
           max={10000}
           min={0}
         />
       </Box>
-      <hr style={{ margin: "1rem 0" }} />
+      <hr className={classes.hr} />
 
       <Typography className={classes.text} variant="body1">
         Star Rating
@@ -143,7 +151,7 @@ export function Filter() {
         </WrapperButton>
       </Box>
 
-      <hr style={{ margin: "1rem 0" }} />
+      <hr className={classes.hr} />
       <Typography className={classes.text} variant="body1">
         Guest Rating
       </Typography>
@@ -152,11 +160,10 @@ export function Filter() {
         onChange={handleGuestRatingChange}
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
-        // getAriaValueText={valuetext}
         max={10}
         min={0}
       />
-      <hr style={{ margin: "1rem 0" }} />
+      <hr className={classes.hr} />
 
       <Typography className={classes.text} variant="body1">
         Free cancellation & payment
@@ -167,17 +174,14 @@ export function Filter() {
           role={undefined}
           dense
           button
-          // onClick={(e) => handleValue(item)}
         >
           <ListItemIcon>
             <Checkbox
-              style={{ width: "20px" }}
+              className={classes.checkbox}
               color="primary"
               edge="start"
-              // checked={item.checked}
               tabIndex={-1}
               disableRipple
-              //   inputProps={{ "aria-labelledby": labelId }}
             />
           </ListItemIcon>
           <ListItemText primary="Free Cancellation" />

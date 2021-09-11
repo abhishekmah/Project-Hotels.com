@@ -22,7 +22,7 @@ export default function Propts() {
 
   useEffect(() => {
     let data = [];
-    axios.get("http://localhost:3001/data").then((res) => {
+    axios.get("https://abhi-app-test.herokuapp.com/data").then((res) => {
        
       data = res.data[0]
       

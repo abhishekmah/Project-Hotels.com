@@ -22,7 +22,7 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
 
   const getData = () => {
     axios
-      .get("http://localhost:3001/data")
+      .get("https://abhi-app-test.herokuapp.com/data")
       .then(({ data }) => {
         setData(data);
       })
@@ -50,10 +50,6 @@ export function SearchResult({ setName, starRatingSort, rating, price }) {
         .map((item) => (
           <SearchCard key={item.hotelId} data={item} />
         ))}
-      {/* <Box>
-        <Button onClick={() => setPage((prev) => prev - 1)}>Prev</Button>
-        <Button onClick={() => setPage((prev) => prev + 1)}>Next</Button>
-      </Box> */}
     </Box>
   );
 }

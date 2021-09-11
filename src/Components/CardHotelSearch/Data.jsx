@@ -13,7 +13,7 @@ const extractCities = (data) => {
 
 export function GetData() {
   axios
-    .get("http://localhost:3004/data")
+    .get("https://abhi-app-test.herokuapp.com/data")
     .then(({ data }) => {
       extractCities(data);
     })

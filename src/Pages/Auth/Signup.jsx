@@ -87,7 +87,7 @@ const Signup = () => {
     }
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <HRLine color="#d32f2f"/>
             <Container>
                 <Form >

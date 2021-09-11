@@ -51,6 +51,7 @@ p{
 input[type="text"],select{
     height: 35px;
     width: 250px;
+    border: 1px solid black;
 }
 .blue{
     color: steelblue;
@@ -61,7 +62,7 @@ input[type="text"],select{
     width: 50px;
     }
 }
-button{
+.button{
     background-color: steelblue;
     color: white;
     padding: 0.4rem 1rem;
@@ -75,7 +76,7 @@ button{
     right: 10px;
 
 }
-button:hover{
+.button:hover{
     filter: brightness(110%);
     cursor: pointer;
 }
@@ -92,6 +93,12 @@ const Payment = () => {
     if (booked) {
         return <Redirect to="/" / >
     }
+
+
+    const numOnly = (e) => {
+        let num = /[^0-9]/gi
+        e.target.value = e.target.value.replace(num,"")
+    }
     return (
         <div>
             
@@ -104,6 +111,7 @@ const Payment = () => {
             </Navbar>
             <BodyContent>
                 <Contents>
+                    <form onSubmit={handleBook}>
                     <div className={styles.left}>
                         <h1>Moxy NYC Times Square</h1><br />
                         <Card>
@@ -115,14 +123,14 @@ const Payment = () => {
                                 <br /> *required fields</span> <br /><br />
                             
                     <h4>Firstname</h4>
-                    <input type="text" /><br /><br />
+                    <input type="text" required/><br /><br />
                     <h4>Lastname</h4>
-                            <input type="text" /><br /><br />
+                            <input type="text" required/><br /><br />
                             <h4>Email address</h4>
-                    <input type="text" /> <br /><br />
+                    <input type="text" required/> <br /><br />
                     
                     <h4>Password</h4>
-                            <input type="text" /><br /><br />
+                            <input type="text" required/><br /><br />
                               <p> <input type="checkbox" checked/> Please email me great deals, last-minute offers and information about properties</p>
                             
                         </Card>
@@ -156,10 +164,11 @@ const Payment = () => {
                             <HRLine /><br />
                             <div className={styles.step3}>
                                 <div className={styles.step3Left}>
+                                    
                                     <h4>Firstname</h4>
-                    <input type="text" /><br /><br />
+                    <input type="text" required/><br /><br />
                     <h4>Lastname</h4>
-                            <input type="text" /><br /><br />
+                            <input type="text" required/><br /><br />
                             <h4>Card tyle</h4>
                                     <select name="" id="">
                                         <option value="">American express</option>
@@ -168,11 +177,13 @@ const Payment = () => {
                                         <option value="">Visa Election</option>
                                     </select><br /><br />
                                      <h4>Card Number</h4>
-                                    <input type="text" placeholder="0000 0000 0000 0000" /><br /><br />
-                                    <h4>Expary Date</h4>
-                                    <span className="CardBox"><input type="text" name="" id="" placeholder="MM"/></span> / <span className="CardBox"><input type="text" name="" id="" placeholder="YY"/></span>
-                                   <br /> <h4>Security Code</h4>
-                                    <span className="CardBox"><input type="text" placeholder="000"/></span>
+                                    <input type="text" placeholder="0000 0000 0000 0000" onKeyUp={ numOnly} required maxLength="16"/><br /><br />
+                                    <h4>Expiry Date</h4>
+                                    <span className="CardBox"><input type="text" name="" id="" placeholder="MM" required onKeyUp={ numOnly} maxLength="2" min="0" max="12"/></span> / <span className="CardBox"><input type="text" name="" id="" placeholder="YY" onKeyUp={ numOnly} maxLength="2"/></span>
+                                   <br /><br /> <h4>Security Code</h4>
+                                    <span className="CardBox"><input type="text" placeholder="000" onKeyUp={ numOnly} maxLength="3" required/></span>
+                                    
+                                    
                             </div>
                                 <div className={styles.step3Right}>
                                     <h3>We accept the following payment methods</h3>
@@ -197,13 +208,15 @@ const Payment = () => {
                             <h3>Terms of Booking</h3>
                             <p>By clicking "Book", you agree you have read and accept our <span className="blue"> Terms and Conditions , Privacy Policy and Government Travel Advice </span></p>
                             <div>
-                                <button onClick={handleBook}>Book</button>
+                                {/* <button onClick={handleBook}>Book</button> */}
+                                <input type="submit" value = "Book" className="button"/>
                                 </div>
                         </Card>
                     </div>
                     {/* <div className={styles.right}>
                         <p>Our Price Guarantee promise</p>
                     </div> */}
+                    </form>
                 </Contents>
 
             </BodyContent>

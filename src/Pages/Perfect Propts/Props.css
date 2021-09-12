@@ -67,6 +67,15 @@ hr {
   display: flex;
   margin-top: 5rem;
 }
+.slider-wrapper {
+  height: 500px;
+}
+.animated {
+  height: 100px;
+}
+.control-arrow {
+  height: 500px;
+}
 .map,
 .review {
   padding-left: 2rem;
@@ -101,7 +110,7 @@ a {
   font-weight: bold;
 }
 .reviewRating {
-  width: 20px;
+  width: 40px;
   color: white;
   font-size: 16px;
   font-weight: bold;

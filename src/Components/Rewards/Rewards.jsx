@@ -38,6 +38,11 @@ display: flex;
     margin-top: 1rem;
 }
 
+@media only screen and (max-width:799px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 `
 
 const Rewards = () => {

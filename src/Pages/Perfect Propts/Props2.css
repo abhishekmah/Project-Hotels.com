@@ -103,7 +103,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 button {
   background: none;
   border: none;
@@ -3380,7 +3379,7 @@ div.FpRfw- {
   display: flex;
   min-height: 96px;
   padding-bottom: 0;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .IW58G0 ._3GFWID img {
@@ -3399,7 +3398,7 @@ div.FpRfw- {
 ._3qtM0s ._3GFWID {
   padding-bottom: 177.77778%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 ._3HGYKK {
@@ -5758,7 +5757,7 @@ button._1wp43W:before {
 }
 
 ._1IqhcR {
-  align-self: start;
+  align-self: flex-start;
 }
 
 ._1WRweA {

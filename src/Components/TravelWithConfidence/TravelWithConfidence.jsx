@@ -15,6 +15,10 @@ display: flex;
 align-items: center;
 justify-content: space-around;
 
+@media only screen and (max-width:799px){
+    flex-direction: column;
+}
+
 `
 
 const Content = styled.div`

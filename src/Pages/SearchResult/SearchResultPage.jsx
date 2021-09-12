@@ -11,14 +11,12 @@ const useStyle = makeStyles({
     margin: "auto",
   },
   searchBar: {
-    width: "100%",
-    margin: "auto",
+    margin: "1rem auto",
   },
   filter: {
     width: "30%",
   },
   box: {
-    // display: "flex",
     width: "100%",
     gap: "1rem",
   },
@@ -36,10 +34,9 @@ export function SearchResultPage() {
 
   return (
     <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <hr style={{ width: "100%" }} />
+      <Grid item xs={12} md={12}>
         <SearchBar className={classes.searchBar} />
-        <hr style={{ width: "100%" }} />
+        <hr />
       </Grid>
       <Grid item xs={3}>
         <Filter className={classes.filter} />

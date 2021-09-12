@@ -6,7 +6,7 @@ We were able to achieve axact UI of the website, with all these major functional
 
 ### Screenshots
 #### Landing page-
-![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/landing%20page.png)
+![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/landingPage.png)
 #### SignUp page-
 ![alt text](https://github.com/abhishekmah/Project-Hotels.com/blob/master/screenshots/signup.png)
 #### SignIn page-

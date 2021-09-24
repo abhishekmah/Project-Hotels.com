@@ -2,7 +2,7 @@
 ##### Hotels.com is a leading provider of hotel accommodation worldwide, offering booking services through its own network of localized websites.Hotels.com gives travelers one of the widest selections of accommodation on the net, including both independent and major chain hotels as well as self-catering in over hundreds of thousands of properties worldwide. The company offers a one-stop shopping source for hotel pricing, amenities, and availability.
 We were able to achieve axact UI of the website, with all these major functionalities within 5-6 days.
 
-### - [Visit Site](https://hotelsclone.netlify.app/)
+### - [Visit Site](https://app.netlify.com/sites/projectangel/overview)
 
 ### Screenshots
 #### Landing page-
